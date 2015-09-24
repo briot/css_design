@@ -3,6 +3,16 @@ var sass = require('gulp-sass');
 var autoprefix = require('gulp-autoprefixer');
 var plumber = require('gulp-plumber');
 var concat = require('gulp-concat');
+var postcss = require('gulp-postcss');
+
+var postcss_src = ['postcss/*'];
+gulp.task('postcss', function() {
+   return gulp.src(postcss_src)
+      .pipe(postcss([require('postcss-write-svg')()
+                    ]))
+      .pipe(concat('postcss.css'))
+      .pipe(gulp.dest('dist/'));
+});
 
 var scss_src = ['scss/*.scss'];
 gulp.task('css', function() {
@@ -31,6 +41,7 @@ gulp.task('media', function() {
 gulp.task('default', ['css', 'js', 'media']);
 gulp.task('watch', ['default'], function() {
    gulp.watch(scss_src, ['css']);
+   gulp.watch(postcss_src, ['postcss']);
    gulp.watch(js_src, ['js']);
    gulp.watch(media_src, ['media']);
 });

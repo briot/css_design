@@ -13,7 +13,9 @@
         "gulp-sass": "",
         "gulp-autoprefixer": "",
         "gulp-plumber": "",
-        "gulp-concat": ""
+        "gulp-concat": "",
+        "postcss-write-svg": "",
+        "gulp-postcss": ""
     },
     "dependencies": {
     }
