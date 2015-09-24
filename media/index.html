@@ -509,6 +509,36 @@
 
  <h1>Forms</h1>
 
+ <div class='demo'>
+    <h1>Sliders
+        <a class='more' href='https://css-tricks.com/custom-interactive-range-inputs/'>&raquo;</a>
+    </h1>
+    <div id='sliders' class='main debug'>
+       <div class="slidershell" id="slidershell1" style='margin-top: 50px'>
+          <div class="sliderfill" id="sliderfill1"></div>
+          <div class="slidertrack" id="slidertrack1"></div>
+          <div class="sliderthumb" id="sliderthumb1"></div>
+          <div class="slidervalue" id="slidervalue1">0</div>
+          <input class="slider" id="slider1" type="range" min="0" max="100" value="0"
+          oninput="slider_showValue(value,1,false);" onchange="slider_showValue(value,1,false);"/>
+       </div>
+       <div class="slidershell" id="slidershell2" style='margin-top: 50px'>
+          <div class="sliderfill" id="sliderfill2"></div>
+          <div class="slidertrack" id="slidertrack2"></div>
+          <div class="sliderthumb" id="sliderthumb2"></div>
+          <div class="slidervalue" id="slidervalue2">0</div>
+          <input class="slidervertical" id="slider2" type="range" min="0" max="100" value="0"
+                 orient="vertical"
+                 oninput="slider_showValue(value,2,true /* vertical */);"
+                 onchange="slider_showValue(value,2,true /* vertical */);"/>
+       </div>
+       <script>
+          slider_setValue(88,1,false);
+          slider_setValue(34,2,true /* vertical */);
+       </script>
+    </div>
+ </div>
+
  <!--
    Floating labels
   -->
