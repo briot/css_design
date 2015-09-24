@@ -2,6 +2,7 @@
 
 <html>
 <head>
+   <meta charset='utf-8'>
    <link rel="stylesheet" type="text/css" href="styles.css" />
    <link rel="stylesheet" type="text/css" href="postcss.css" />
    <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -513,7 +514,7 @@
     <h1>Sliders
         <a class='more' href='https://css-tricks.com/custom-interactive-range-inputs/'>&raquo;</a>
     </h1>
-    <div id='sliders' class='main debug'>
+    <div id='sliders' class='main'>
        <div class="slidershell" id="slidershell1" style='margin-top: 50px'>
           <div class="sliderfill" id="sliderfill1"></div>
           <div class="slidertrack" id="slidertrack1"></div>
@@ -539,12 +540,38 @@
     </div>
  </div>
 
+ <!-- Custom forms -->
+ <div class='demo'>
+    <h1>(design) Form
+       <a class='more' href='https://medium.com/@kubachrzecijanek/how-to-build-an-awesome-form-1e9b2c1bd00d'>&raquo;</a>
+    </h1>
+    <div id='customForms' class='main'>
+       <form>
+          <div class='no-label' id='customForms__full_div'>
+             <label for='#customForms__full'>Full Name</label>
+             <input id='customForms__full' placeholder='Full Name'/>
+          </div>
+          <div class='no-label' id='customForms__email_div'>
+             <label for='#customForms__email'>Email</label>
+             <input id='customForms__email' placeholder='Email'/>
+          </div>
+          <div class='no-label' id='customForms__passwd_div'>
+             <label for='#customForms__passwd'>Password</label>
+             <input id='customForms__passwd' placeholder='Password'/>
+          </div>
+          <div class='no-label'>
+             <input type='submit' value='Sign Up'>
+          </div>
+       </form>
+    </div>
+ </div>
+
  <!--
    Floating labels
   -->
  <div class='demo'>
     <h1>Floating labels</h1>
-    <div id='floatLabels' class='main'>
+    <div id='floatLabels' class='main debug'>
        <form>
           <div class='floatlabel'>
              <input type='text' id='firstName' required>
@@ -553,6 +580,10 @@
           <div class='floatlabel floatlabel--bottom'>
              <input type='text' id='lastName' required>
              <label for='lastName'>Last Name</label>
+          </div>
+          <div class='floatlabel floatlabel--top'>
+             <input type='text' id='email' required>
+             <label for='email'>Email</label>
           </div>
        </form>
     </div>

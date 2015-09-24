@@ -1,10 +1,18 @@
+$fa-font-path: '.';
+@import "../node_modules/font-awesome/scss/font-awesome";
+
 $left-side-width: 160px;
+$body-margin: 8px;
+
+body {
+   margin: $body-margin;
+}
 
 .main {
    display: none !important;
    position: absolute;
-   left: $left-side-width + 30px;
-   top: 0;
+   left: $left-side-width + $body-margin; // no extra space to preserve :hover
+   top: 30px;
    right: 0;
    bottom: 0;
    &.debug {
@@ -19,11 +27,12 @@ body > h1 {
 
 .demo {
    & > h1 {
-      width: $left-side-width;
+      $padding-left: 15px;
+      width: $left-side-width - $padding-left;
       font-size: 12px;
       font-weight: normal;
       margin: 0;
-      padding: 0.3em 0 0.3em 15px;
+      padding: 0.3em 0 0.3em $padding-left;
       a {
          text-decoration: none;
       }
@@ -37,3 +46,5 @@ body > h1 {
       }
    }
 }
+
+@import "customforms";

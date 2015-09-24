@@ -18,5 +18,6 @@
         "gulp-postcss": ""
     },
     "dependencies": {
+        "font-awesome": ""
     }
 }

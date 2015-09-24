@@ -5,6 +5,8 @@ var plumber = require('gulp-plumber');
 var concat = require('gulp-concat');
 var postcss = require('gulp-postcss');
 
+var fa_fonts = 'node_modules/font-awesome/fonts';
+
 var postcss_src = ['postcss/*'];
 gulp.task('postcss', function() {
    return gulp.src(postcss_src)
@@ -34,7 +36,7 @@ gulp.task('js', function() {
 
 var media_src = ['media/*'];
 gulp.task('media', function() {
-   return gulp.src(media_src)
+   return gulp.src(media_src.concat([fa_fonts + '/*']))
       .pipe(gulp.dest('dist/'));
 });
 
