@@ -12,7 +12,9 @@ body {
    display: none !important;
    position: absolute;
    left: $left-side-width + $body-margin; // no extra space to preserve :hover
-   top: 30px;
+   top: 0;
+   padding-top: 30px;
+   padding-left: 20px;
    right: 0;
    bottom: 0;
    &.debug {

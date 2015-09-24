@@ -1,0 +1,79 @@
+#contextShifting {
+   $blue: #03aaee;
+   $secondary: #87728e;
+
+   background: black;
+   font-family: 'Raleway';
+   font-weight: 300;
+   display: table;
+   
+   .header {
+     color: $blue;
+     font-size: 23px;
+     display: inline;
+   }
+   
+   .text {
+     width: 80%;
+     margin-left: 11%;
+   }
+   
+   .temp {
+     color: $secondary;
+     font-size: 17px;
+     margin-top: 4px;
+     display: inline;
+     float: right;
+   }
+   
+   .reg-text {
+     color: #fff;
+     opacity: 0.7;
+     font-size: 12px;
+     line-height: 1.45;
+   }
+   
+   .snow {
+     margin-top: 26px;
+     margin-left: 40px;
+     color: $blue;
+   }
+   
+   .day {
+     width: 250px;
+     height: 550px;
+     position: absolute;
+     background-size: cover;
+     transition: opacity 2s ease, transform 1.5s ease;
+   }
+   .day.highlight {
+     transform: scale(1.1);
+   }
+  
+   .lines {
+     width: 250px;
+     margin-top: 200px;
+   }
+   
+   .lines path {
+     stroke: $blue;
+     fill: none;
+   }
+   
+   .day1 {
+     background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/iso-1.jpg");
+     margin-right: 30px;
+     left: 30px;
+   }
+   
+   .day2 {
+     background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/iso-2.jpg");
+     margin-right: 30px;
+     left: 340px;
+   }
+   
+   .day3 {
+     background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/iso-3.jpg");
+     left: 650px;
+   }
+}
