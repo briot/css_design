@@ -1,0 +1,12 @@
+#systemfonts {
+   @font-face {
+     font-family: "MacSystem";
+     src:
+       local(".HelveticaNeueDeskInterface-Regular"),  // OSX 10.10.1
+       local(".LucidaGrandeUI");   // OSX 10.9
+   }
+   
+   pre.system { font-family: "MacSystem", sans-serif; }
+   pre.menu   { font-family: menu }
+   pre.webkit { font-family:'-webkit-system-font';}
+}

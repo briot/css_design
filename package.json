@@ -1,0 +1,20 @@
+{
+    "name": "design",
+    "version": "1.0.0",
+    "description": "Various design attempts",
+    "main": "index.html",
+    "license": "GPL-3.0",
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "devDependencies": {
+        "gulp": "",
+        "gulp-sass": "",
+        "gulp-autoprefixer": "",
+        "gulp-plumber": "",
+        "gulp-concat": ""
+    },
+    "dependencies": {
+    }
+}

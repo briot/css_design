@@ -1,0 +1,44 @@
+#floatLabels {
+  .floatlabel {
+     position: relative;
+     font-size: 14px;
+     margin-top: 0;
+     margin-bottom: 20px;
+     vertical-align: middle;
+     width: 200px;
+
+     input {
+        background: transparent;
+        width: 100%;
+        box-sizing: border-box;
+     }
+     label {
+        font-size: 0.9em;
+        color: #888;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        left: 0;
+        transition: 0.2s;
+        box-sizing: border-box;
+     }
+
+     input:valid + label,
+     input:focus + label {
+        font-size: 0.8em;
+        color: #468CD1;
+        top: 0;
+     }
+
+     &--bottom {
+        input:valid + label,
+        input:focus + label {
+           top: calc(100% - 8px);
+           background: #468CD1;
+           color: #CAEEF8;
+           height: 1em;
+        }
+     }
+  }
+}

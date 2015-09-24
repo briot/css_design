@@ -1,0 +1,29 @@
+#rotatedHeader {
+   table {
+      border-collapse: collapse;
+   }
+   td {
+      width: 30px;
+      text-align: center;
+      padding: 10px 5px;
+      border: 1px solid #ccc;
+   }
+   th.rotate {
+      height: 140px;
+      white-space: nowrap;
+      > div {
+         transform: translate(25px, 51px)  //  computed with cos()
+             rotate(-45deg);
+         width: 30px;
+         > span {
+            border-bottom: 1px solid #ccc;
+            padding: 5px 10px;
+         }
+      } 
+   }
+   th.row-header {
+      padding: 0 10px;
+      border-bottom: 1px solid #ccc;
+   }
+
+}

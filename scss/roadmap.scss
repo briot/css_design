@@ -1,0 +1,98 @@
+#roadmap {
+   $month_color: #bbb;
+   $names_width: 80px;
+   $month_width: 120px;
+   $line_height: 20px;
+
+   font-size: 14px;
+   overflow: hidden;
+
+   @mixin vertical-line($color, $width:1px, $style: dotted) {
+      position: absolute;
+      content: '';
+      border-left: $width $style $color;
+      height: 350px;  // ??? Can we compute automatically 
+      margin-left: -0.8em;
+      margin-top: 1.6em;
+      display: inline-block;
+   }
+
+   .month {
+      color: $month_color;
+      text-align: left;
+      &::after {
+        @include vertical-line($month_color);
+      }
+   }
+   .now {
+     display: inline-block;
+     width: 0;
+     &::after {
+        @include vertical-line(red, 2px, solid);
+     }
+   }
+   .duration--1week  { width: $month_width / 4 * 1 };
+   .duration--2weeks { width: $month_width / 4 * 2 };
+   .duration--3weeks { width: $month_width / 4 * 3 };
+   .duration--4weeks { width: $month_width / 4 * 4 };
+   .duration--5weeks { width: $month_width / 4 * 5 };
+   .duration--6weeks { width: $month_width / 4 * 6 };
+   .duration--7weeks { width: $month_width / 4 * 7 };
+   .duration--8weeks { width: $month_width / 4 * 8 };
+   .group {
+      position: relative;
+      clear: both;
+      margin-top: 20px;
+      & + .group {
+         margin-top: 30px;
+      }
+      &.group--blue  .busy { background: #468CD1; color: #CAEEF8; }
+      &.group--green .busy { background: #62BE8A; color: #C8FEDF; }
+      h1 {
+         font-weight: normal;
+         font-size: 1em;
+         white-space: nowrap;
+         margin: 0;
+         display: block;
+         text-align: center;
+         color: $month_color;
+         position: absolute;
+         height: 100%;
+         span {
+            display: inline-block;
+            transform:  translateX(-50%) translateY(-50%) rotate(-90deg);
+            position: absolute;
+            margin-left: 20px;
+            top: 50%;
+            left: 50%;
+         }
+      }
+   }
+   .name {
+      width: $names_width;
+   }
+   img {
+      border-radius: 100%;
+      width: 30px;
+      height: 30px;
+      vertical-align: middle;
+   }
+   .line {
+      margin: 0 0 0 40px;
+      & + .line {
+         margin-top: 10px;
+      }
+      > span {
+         vertical-align: middle;
+         display: inline-block;
+         white-space: nowrap;
+         text-overflow: ellipsis;
+      }
+      .busy {
+         text-align: center;
+         border-radius: 30px;
+         padding: 5px;
+      }
+   }
+
+}

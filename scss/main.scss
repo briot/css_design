@@ -1,0 +1,36 @@
+$left-side-width: 160px;
+
+.main {
+   display: none !important;
+   position: absolute;
+   left: $left-side-width + 30px;
+   top: 0;
+   right: 0;
+   bottom: 0;
+}
+
+body > h1 {
+   font-size: 14px;
+   margin: 0;
+}
+
+.demo {
+   & > h1 {
+      width: $left-side-width;
+      font-size: 12px;
+      font-weight: normal;
+      margin: 0;
+      padding: 0.3em 0 0.3em 15px;
+      a {
+         text-decoration: none;
+      }
+   }
+   &:hover {
+      & > h1 {
+         background: #eee;
+      }
+      .main {
+         display: block !important;
+      }
+   }
+}

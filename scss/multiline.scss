@@ -1,0 +1,21 @@
+#multiLineTitle {
+   div {
+     margin-top: 20px;
+     font-size: 21px;
+     border-bottom: 1px solid #ccc;
+
+     display: flex;
+     align-items: baseline; // flex-end;   // vertical alignment
+     flex-wrap: wrap;
+     > h1, > h2 { white-space: nowrap; }
+     h1 { flex-grow: 1; margin: 0}
+
+     &.wide   { width: 700px; }
+     &.narrow { width: 400px; }
+   }
+   h2 {
+     font-size: 60%;
+     color: #999;
+     margin: 0;
+   }
+}

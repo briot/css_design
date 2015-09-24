@@ -1,0 +1,44 @@
+#blurLabel {
+    > div {
+       background-image: url('alps.png');
+       background-size: cover;
+       width: 500px;
+       height: 400px;
+       overflow: hidden;
+       position: relative;
+    }
+    .glass::before, article {
+       width: 100%;
+       height: 100%;
+       overflow: hidden;
+     }
+    .glass {
+       position: relative;
+       background-color: white;
+       transition: transform 0.5s ease-out;
+       &::before {
+          z-index: -1;
+          display: block;
+          position: absolute;
+          background-size: cover;
+          content: ' ';
+          filter: url('#blurLabel-blur');
+          filter: blur(5px);
+          opacity: 0.4;
+          background-image: url('alps.png');
+          transition: transform 0.5s ease-out;
+       }
+    }
+
+    .glass.down {
+       transform: translateY(100%) translateY(-6rem);
+       transform: translateY(100%) translateY(-6rem) translateZ(0);
+       &::before {
+          transform: translateY(-100%) translateY(6rem);
+       }
+    }
+    .glass:hover, .glass:hover::before, .glass.up, .glass.up::before {
+       transform: translateY(0);
+       transform: translateY(0) translateZ(0);
+    }
+}

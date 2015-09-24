@@ -1,0 +1,31 @@
+#textEffects {
+
+   .date {
+      background-color:#987; 
+      position:relative;
+      display: inline-block;
+      padding:45px 5px 0px;
+      margin-left:10px;
+      min-width: 58px;
+   }
+
+   .day {
+      font-size: 45px;
+      line-height: 45px;
+      position: absolute;
+      left: 5px;
+      top: 0px;
+   }
+   .month {
+      text-transform: uppercase;
+      text-align: center;
+      font-size:25px;
+   }
+   .year {
+      display: block;
+      position: absolute;
+      right: -5px;
+      top: 15px;
+      transform: rotate(-90deg);
+   }
+}

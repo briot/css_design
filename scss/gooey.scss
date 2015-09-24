@@ -1,0 +1,61 @@
+#gooeyEffect {
+   .rect {
+      display: inline-block;
+      background: #5677fc;
+      width: 200px;
+      height: 200px;
+      filter: url('#gooeyEffectBlur');
+   }
+
+   .blobs{
+      display: inline-block;
+      filter:url('#gooeyEffectGoo');
+      position: relative;
+
+   }
+   $dist_x: 65px;
+   $dist_y: 65px;
+   $blob_height: 100px;
+   $blob_width: 100px;
+   @keyframes blob-left-top-anim{
+      0%  {transform:scale(1.1) translate(0,0); }
+      33% {transform:scale(0.9) translate(-$dist_x,0); }
+      62% {transform:scale(0.7) translate(-$dist_x,-$dist_y); }
+      94% {transform:scale(1.1) translate(0,0); }
+   }
+   @keyframes blob-right-top-anim{
+      0%  {transform:scale(1.1) translate(0,0); }
+      33% {transform:scale(0.9) translate($dist_x,0); }
+      64% {transform:scale(0.7) translate($dist_x,-$dist_y); }
+      96% {transform:scale(1.1) translate(0,0); }
+   }
+   @keyframes blob-left-bottom-anim{
+      0%  {transform:scale(1.1) translate(0,0); }
+      33% {transform:scale(0.9) translate(-$dist_x,0); }
+      66% {transform:scale(0.7) translate(-$dist_x,$dist_y); }
+      98% {transform:scale(1.1) translate(0,0); }
+   }
+   @keyframes blob-right-bottom-anim{
+      0%   {transform:scale(1.1) translate(0,0); }
+      33%  {transform:scale(0.9) translate($dist_x,0); }
+      68%  {transform:scale(0.7) translate($dist_x,$dist_y); }
+      100% {transform:scale(1.1) translate(0,0); }
+   }
+   .blob{
+      position:absolute;
+      background:#e97b7a;
+      width: $blob_width;
+      height: $blob_height;
+      line-height:100px;
+      text-align:center;
+      color:white;
+      font-size:40px;
+      border-radius:100%;
+      margin-top: -$dist_y - $blob_height;
+      margin-left:-$dist_x - $blob_width;
+      animation:blob-left-top-anim cubic-bezier(0.770, 0.000, 0.175, 1.000) 4s infinite;
+      &:nth-child(2){ animation-name:blob-right-top-anim; }
+      &:nth-child(3){ animation-name:blob-left-bottom-anim; }
+      &:nth-child(4){ animation-name:blob-right-bottom-anim; }
+   }
+}
