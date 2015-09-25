@@ -406,6 +406,8 @@
                   <br>
                   When working on a style guide, it is useful to automatically generate a file
                   that shows the rendering of the style, and how to use it.
+
+               <li>Which <a href='http://thenewcode.com/775/Which-CSS-Measurements-To-Use-When'>measurements</a> to use, when</li>
             </ol>
          </div>
       </div>
@@ -551,6 +553,38 @@
                <span>6</span>
                <span>7</span>
             </div>
+         </div>
+      </div>
+
+      <div class='demo'>
+         <h1>conditional media queries
+             <a class='more' href='https://css-tricks.com/conditional-media-query-mixins/'>&raquo;</a>
+         </h1>
+         <div id='sassConditional' class='main'>
+            <pre>
+               @mixin bp($point) {
+                 $bp-babybear: "(max-width: 600px)";
+                 $bp-mamabear: "(max-width: 1250px)";
+                 $bp-papabear: "(max-width: 1600px)";
+               
+                 @if $point == papa-bear {
+                   @media #{$bp-papabear} { @content; }
+                 }
+                 @else if $point == mama-bear {
+                   @media #{$bp-mamabear} { @content; }
+                 }
+                 @else if $point == baby-bear {
+                   @media #{$bp-babybear}  { @content; }
+                 }
+               }
+
+               .sidebar {
+                 width: 33.33%;
+                 @include bp(baby-bear) {
+                   width: 100%;
+                 }
+               }
+            </pre>
          </div>
       </div>
 
