@@ -1,0 +1,94 @@
+#checkboxes {
+   .button1 {
+     input[type="checkbox"],
+     input[type="radio"] {
+        display: none;
+        & + label span {
+          display: inline-block;
+          vertical-align: middle;
+          width: 45px;
+          height: 45px;
+          background: url(checkbox-radio-sprite.png) 0 center no-repeat;
+        }
+      }
+      label {
+        cursor: pointer;
+        color: #555;
+        margin-right: 40px;
+      }
+      input[type="checkbox"]:checked + label span {
+        background-position: -48px;
+      }
+      input[type="radio"] + label span {
+        background-position: -105px;
+      }
+      input[type="radio"]:checked + label span {
+        background-position: -153px;
+      }
+   }
+
+   .button2 {
+     input[type="checkbox"],
+     input[type="radio"] {
+        display: none;
+        & + label span {
+          display: inline-block;
+          vertical-align: middle;
+          width: 25px;
+          height: 25px;
+          background: radial-gradient(#eee, #aaa);
+        }
+      }
+      input[type="radio"] + label span  {
+        border-radius: 50%;
+      }
+      input[type="checkbox"]:checked + label span::before {
+         content: "✓";
+         color: deepPink;
+         margin-left: 5px;  // center
+         font-size: 20px;
+      }
+      input[type="radio"]:checked + label span {
+          background-image: radial-gradient(#FF5ABA, deepPink);
+      }
+      label {
+        margin-right: 40px;
+        cursor: pointer;
+        color: #555;
+      }
+   }
+
+   .button3 {
+      font-family: Indie Flower;
+      font-size: 80px;
+      svg { 
+        width: 1em;
+        height: 1em;
+        position: absolute;
+        left: -.5em; 
+        top: .1em;
+        border: 2px solid #555;
+      }
+      label {
+        display: inline-block;
+        padding-left: 1em;
+        position: relative;
+        cursor: pointer;
+      }
+      input[type="checkbox"] {
+        opacity: 0;
+        width: 40px;
+        height: 40px;
+      }
+      label svg path {
+        transition: stroke-dashoffset .4s linear;
+      }
+      input[type="checkbox"]:checked ~ label svg path {
+        stroke-dashoffset: 0;
+      }
+      input[type="checkbox"]:checked ~ label {
+        color: orange;
+        text-decoration: line-through;
+      }
+   }
+}
