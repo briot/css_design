@@ -11,7 +11,8 @@ body {
 
 .main {
    display: none !important;
-   position: absolute;
+   position: fixed;
+   overflow: scroll;
    left: $left-side-width + $body-margin; // no extra space to preserve :hover
    top: 0;
    padding-top: $page-margin-top;

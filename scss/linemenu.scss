@@ -1,0 +1,124 @@
+#linemenu {
+   // @import url(//fonts.googleapis.com/css?family=Boogaloo);
+   
+   background: #F06D06;
+   padding: 2rem 4rem 2rem 8rem;
+   color: white;
+   font-family: "Lucida Grande", sans-serif;
+   font-size: 0.9rem;
+   line-height: 1.4;
+   overflow: scroll;
+   
+   .main-nav {
+     ul {
+       list-style: none;
+       padding: 0;
+       margin: 0;
+     }
+     li {
+       display: inline-block;
+       padding: 5px;
+     }
+     a {
+       color: white;
+       text-decoration: none;
+     }
+     .close-button {
+       display: none;
+     }
+   }
+   
+   .main-nav {
+     position: absolute;
+     top: 2.4rem;
+     left: 2rem;
+     width: 20rem;
+     border: solid 1rem white;
+     background: rgba(#F06D06, 0.75);
+     box-shadow: 0 0 5px rgba(black, 0.2);
+     padding: 4rem;
+     transition: 0.3s ease;
+     transform: scale(0.11) translateZ(0);
+     transform-origin: top left;
+     cursor: pointer;
+     ul {
+       list-style: none;
+       margin: 0;
+       padding: 0;
+       pointer-events: none;
+     }
+     a {
+       font-family: 'Boogaloo', cursive;
+       font-size: 1.6rem;
+       text-transform: uppercase;
+       display: block;
+       margin: 0 0 2rem 0;
+       padding: 0.5rem;
+       color: transparent;
+       &:hover, &:focus {
+         background: black;
+         color: white !important;
+       }
+     }
+     li {
+       background: white;
+       display: block;
+       padding: 0;
+     }
+     li:last-child a {
+       margin: 0;
+     }
+     &.open {
+       transform: scale(1.0);
+       padding: 2rem;
+       ul {
+         pointer-events: auto;
+       }
+       a {
+         color: black;
+       }
+       .close-button {
+         opacity: 1;
+       }
+     }
+     .close-button {
+       display: block;
+       position: absolute;
+       top: -2rem;
+       left: -2rem;
+       border: 0.5rem white solid;
+       border-radius: 50%;
+       background: #F06D06;
+       text-align: center;
+       width: 4rem;
+       height: 4rem;
+       color: white;
+       font-weight: bold;
+       font-size: 2rem;
+       opacity: 0;
+       transition: opacity 0.2s ease;
+       outline: 0;
+       span {
+         position: relative;
+         top: -3px;
+       }
+       &:hover, &:active {
+         background: black; 
+       }
+     }
+   }
+   
+   h1 {
+     font-family: 'Boogaloo', cursive;
+     text-transform: uppercase;
+     padding: 0;
+     margin: 0;
+     font-size: 3rem;
+   }
+   
+   .visually-hidden {
+     position: absolute;
+     top: -9999px;
+     left: -9999px;
+   }
+}
