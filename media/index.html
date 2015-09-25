@@ -1,753 +1,868 @@
 <!doctype html>
-
 <html>
-<head>
-   <meta charset='utf-8'>
-   <link rel="stylesheet" type="text/css" href="styles.css" />
-   <link rel="stylesheet" type="text/css" href="postcss.css" />
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <script src='scripts.js'></script>
+   <head>
+      <meta charset='utf-8'>
+      <link rel="stylesheet" type="text/css" href="styles.css" />
+      <link rel="stylesheet" type="text/css" href="postcss.css" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src='scripts.js'></script>
+      <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-</head>
-<body>
-   <!-- meta: see https://css-tricks.com/probably-use-initial-scale1/ -->
+      <!--  for the flexbox demo -->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+   </head>
+   <body>
+      <!-- meta: see https://css-tricks.com/probably-use-initial-scale1/ -->
 
-  <h1>Images</h1>
+      <h1>Images</h1>
 
- <!-- Knockout text -->
-
- <div class='demo'>
-    <h1>Knockout Text
-        <a class='more' href='https://css-tricks.com/how-to-do-knockout-text/'>&raquo;</a>
-    </h1>
-    <div id='knockout' class='main'>
-       <p class="gradient">The Title</p>
-       <p class="gradient2">The Alps</p>
-       <p class="gradient3">Webkit</p>
-       <p>'Webkit' does not need repeating the text in the CSS</p>
-    </div>
- </div>
-
- <!-- Blur -->
-
- <div class='demo'>
-    <h1>Text on blurry background
-        <a class='more' href='https://css-tricks.com/frosting-glass-css-filters/'>&raquo;</a>
-    </h1>
-    <div id='blurLabel' class='main'>
-       <div>
-          <article class='glass down'>
-              <h1>Alps</h1>
-              <p>Some additional contents</p>
-              <p>Which could</p>
-              <p>be quite long</p>
-              <p>be quite long</p>
-              <p>be quite long</p>
-              <p>be quite long</p>
-              <p>be quite long</p>
-          </article>
-       </div>
-       <svg xmlns="http://www.w3.org/2000/svg"  version="1.1" style='display:none'>
-          <defs>
-             <filter id="blurLabel-blur">
-                <feGaussianBlur stdDeviation="5"/>
-             </filter>
-          </defs>
-       </svg>
-    </div>
- </div>
-
- <!-- CSS patterns -->
-
- <div class='demo'>
-    <h1>CSS Patterns
-        <a class='more' href='http://lea.verou.me/css3patterns/'>&raquo;</a>
-    </h1>
-    <div id='cssPatterns' class='main'>
-       <div class='japanese'></div>
-       <div class='rainbow'></div>
-       <div class='blueprint'></div>
-       <div class='lined'></div>
-    </div>
- </div>
-
- <!--
-   Blend modes
- -->
- <div class='demo'>
-   <h1>Blend modes
-       <a class='more' href='https://css-tricks.com/chaining-multiple-blend-modes/'>&raquo;</a>
-   </h1>
-   <div id='blendmodes' class='main'>
-     <div class="container" id="c-red" style="background-blend-mode: normal">
-        <div class="menu">
-           <span>Blend mode</span>
-           <div class="menu__item">
-             <ul id="blendmodesblend">
-                <li class="is--active">normal</li>
-                <li>multiply</li>
-                <li>overlay</li>
-                <li>screen</li>
-                <li>darken</li>
-                <li>lighten</li>
-                <li>color-dodge</li>
-                <li>color-burn</li>
-                <li>hard-light</li>
-                <li>soft-light</li>
-                <li>difference</li>
-                <li>exclusion</li>
-                <li>hue</li>
-                <li>saturation</li>
-                <li>color</li>
-                <li>luminosity</li>
-             </ul>
-           </div>
-        </div>
-        <ul id="blendmodescolor">
-          <li class='is--active'>red</li>
-          <li>yellow</li>
-          <li>green</li>
-        </ul>
-     </div>
-     <script>blendmodes()</script>
-   </div>
- </div>
-
- <h1>Animation</h1>
-
- <!-- Context shifting -->
- <div class='demo'>
-    <h1>Context shifting
-        <a class='more' href='https://css-tricks.com/the-importance-of-context-shifting-in-ux-patterns/'>&raquo;</a>
-    </h1>
-    <div id='contextShifting' class='main'>
-       <div class="container">
-         <div class="day day1">
-           <svg class="lines" xmlns="http://www.w3.org/2000/svg" width="300" height="115" viewBox="0 0 300 115">
-             <path d="M0 66.6s69.5 29 92-3 53.1-49.3 75.1-24.1 54.2 36.9 76.4 21.4 30.1-26.3 56.5-20.1" />
-           </svg>
-           <div class="text">
-             <span class="header tI">Today</span>
-             <span class="temp tI">24&#176;F High</span>
-             <p class="reg-text tI">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quam leo, fringilla sit amet diam ac, condimentum tristique nisi. Duis eleifend odio dui, et fermentum augue bibendum nec. Cras id sem at dolor tempor euismod.</p>
-             <p class="snow tI">85% Chance of Snow</p>
-           </div><!--text-->
+      <!-- Knockout text -->
+      <div class='demo'>
+         <h1>Knockout Text
+            <a class='more' href='https://css-tricks.com/how-to-do-knockout-text/'>&raquo;</a>
+         </h1>
+         <div id='knockout' class='main'>
+            <p class="gradient">The Title</p>
+            <p class="gradient2">The Alps</p>
+            <p class="gradient3">Webkit</p>
+            <p>'Webkit' does not need repeating the text in the CSS</p>
          </div>
-         <div class="day day2">
-           <svg class="lines" xmlns="http://www.w3.org/2000/svg" width="300" height="115" viewBox="0 0 300 115">
-             <path d="M0 30s79.3 68.6 112.3 51.5S163.8 9.1 195 32.4s77 33.3 105 18.7" />
-           </svg>
-           <div class="text">
-             <span class="header tI">Tomorrow</span>
-             <span class="temp tI">38&#176;F High</span>
-             <p class="reg-text tI">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quam leo, fringilla sit amet diam ac, condimentum tristique nisi. Duis eleifend odio dui, et fermentum augue bibendum nec. Cras id sem at dolor tempor euismod.</p>
-             <p class="snow tI">53% Chance of Snow</p>
-           </div><!--text-->
-         </div>
-         <div class="day day3">
-         <svg class="lines" xmlns="http://www.w3.org/2000/svg" width="300" height="115" viewBox="0 0 300 115">
-             <path d="M0 56.3s49.5-38.2 68.7-11.9 65.9 43.6 90.8 19.8 42.6-12.7 48.2-10.7c9.2 3.3 52.2 33.7 72.1-5.1 9.8-19 20.2-5.4 20.2-5.4" />
-           </svg>
-           <div class="text">
-             <span class="header tI">Day After</span>
-             <span class="temp tI">34&#176;F High</span>
-             <p class="reg-text tI">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quam leo, fringilla sit amet diam ac, condimentum tristique nisi. Duis eleifend odio dui, et fermentum augue bibendum nec. Cras id sem at dolor tempor euismod.</p>
-             <p class="snow tI">74% Chance of Snow</p>
-           </div><!--text-->
-         </div>
-       </div>
-       <script>contextShifting()</script>
-    </div>
- </div>
-
-
-  <h1>SVG</h1>
-
- <!-- Embedded SVG in CSS -->
-
- <div class='demo'>
-    <h1>SVG embedded in CSS
-        <a class='more' href='https://github.com/jonathantneal/postcss-write-svg'>&raquo;</a>
-    </h1>
-    <div id='svgincss' class='main'>
-        <p>
-           Using the PostCSS pre-processor, SVG is written in the SASS style sheet, and automatically converted to a background image.
-        </p>
-        <div class='arrow'></div>
-    </div>
- </div>
-
- <!-- SVG tabs -->
-
- <div class='demo'>
-    <h1>SVG Tabs
-        <a class='more' href='https://css-tricks.com/svg-tabs-using-svg-shape-template/'>&raquo;</a>
-    </h1>
-    <div id='svgTabs' class='main'>
-       <!-- template for the tab -->
-       <svg height="0" width="0" style="position: absolute; margin-left: -100%;">
-          <defs>
-             <filter id='shadow'>
-               <feComponentTransfer in="SourceGraphic">
-                 <feFuncR type="discrete" tableValues="0"/>
-                 <feFuncG type="discrete" tableValues="0"/>
-                 <feFuncB type="discrete" tableValues="0"/>
-               </feComponentTransfer>
-               <feGaussianBlur stdDeviation="1"/>
-                <feComponentTransfer><feFuncA type="linear" slope="0.2"/></feComponentTransfer>
-               <feOffset dx="5" dy="1" result="shadow"/>
-               <feComposite in="SourceGraphic" />
-             </filter>
-             <linearGradient id="tab-1-bg" x1="0%" y1="0%" x2="0%" y2="65%">
-               <stop offset="0%" style="stop-color: rgba(136, 195, 229, 1.0);" />
-               <stop offset="100%" style="stop-color: rgba(118, 160, 192, 1.0);" />
-             </linearGradient>
-             <linearGradient id="tab-2-bg" x1="0%" y1="0%" x2="0%" y2="65%">
-               <stop offset="0%" style="stop-color: rgba(149, 190, 233, 1.0);" />
-               <stop offset="100%" style="stop-color: rgba(112, 153, 213, 1.0);" />
-             </linearGradient>
-             <linearGradient id="tab-3-bg" x1="0%" y1="0%" x2="0%" y2="65%">
-               <stop offset="0%" style="stop-color: rgba(61, 149, 218, 1.0);" />
-               <stop offset="100%" style="stop-color: rgba(43, 130, 197, 1.0);" />
-             </linearGradient>
-             <linearGradient id="tab-4-bg" x1="0%" y1="0%" x2="0%" y2="65%">
-               <stop offset="0%" style="stop-color: rgba(72, 204, 243, 1.0);" />
-               <stop offset="100%" style="stop-color: rgba(71, 194, 243, 1.0);" />
-             </linearGradient>
-          </defs>
-          <path id="tab-shape" class="tab-shape" d="M116.486,29.036c-23.582-8-14.821-29-42.018-29h-62.4C5.441,0.036,0,5.376,0,12.003v28.033h122v-11H116.486 z">
-       </svg>
-       <nav role="navigation" class="main-navigation">
-         <ul>
-           <li class="tab-1 active" data-bg-color="rgba(118, 160, 192, 1.0)">
-             <a href="#home">
-               <span>Home</span>
-               <svg viewBox="0 0 122 40"><use xlink:href="#tab-shape"></use></svg>
-             </a>
-           </li>
-           <li class="tab-2" data-bg-color="rgba(112, 153, 213, 1.0)">
-             <a href="#about">
-               <span>About</span>
-               <svg viewBox="0 0 122 40"><use xlink:href="#tab-shape"></use></svg>
-             </a>
-           </li>
-           <li class="tab-3" data-bg-color="rgba(43, 130, 197, 1.0)">
-             <a href="#clients">
-               <span>Clients</span>
-               <svg viewBox="0 0 122 40"><use xlink:href="#tab-shape"></use></svg>
-             </a>
-           </li>
-           <li class="tab-4" data-bg-color="rgba(71, 194, 243, 1.0)">
-             <a href="#contact">
-               <span>Contact</span>
-               <svg viewBox="0 0 122 40"><use xlink:href="#tab-shape"></use></svg>
-             </a>
-           </li>
-         </ul>
-       </nav>
-      <div class="main-content">
-        <article class="article">
-          <h2>An Article Right Here, Boss.</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa totam cumque ad repellendus ab ea repellat aperiam accusantium labore officia est culpa fugiat eaque magnam a. Labore molestias ea at maiores inventore veritatis cupiditate cum doloribus quisquam eum et asperiores!</p>
-        </article>
       </div>
-      <script>svgTabs()</script>
-   </div>
- </div>
 
- <!--
-  Second example: SVG filters applied to DOM elements
-  -->
-
- <div class='demo'>
-    <h1>Gooey Effect
-       <a class='more' href='https://css-tricks.com/gooey-effect/'>&raquo;</a>
-    </h1>
-    <div id='gooeyEffect' class='main'>
-       <div class='rect'></div>
-       <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-         <defs>
-             <filter id="gooeyEffectBlur">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
-             </filter>
-             <filter id="gooeyEffectGoo">
-               <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-               <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-               <feBlend in="SourceGraphic" in2="goo" />
-             </filter>
-          </defs>
-       </svg>
-
-       <div class="blobs">
-         <div class="blob">4</div>
-         <div class="blob">3</div>
-         <div class="blob">2</div>
-         <div class="blob">1</div>
-       </div>
-    </div>
- </div>
-
-
- <h1>Tables</h1>
-
- <!--
-  Rotated table header
- -->
- <div class='demo'>
-    <h1>Rotated table header</h1>
-    <div id='rotatedHeader' class='main'>
-       <table>
-          <thead>
-            <tr>
-              <th></th>
-              <th class='rotate'>
-                 <div><span>Column Header 1</span></div>
-              </th>
-              <th class='rotate'>
-                 <div><span>Column Header 2</span></div>
-              </th>
-              <th class='rotate'>
-                 <div><span>Column Header 3</span></div>
-              </th>
-           </tr>
-          </thead>
-          <tbody>
-              <tr>
-                 <th class='row-header'>Row header 1</th>
-                 <td><input type='checkbox'></td>
-                 <td><input type='checkbox'></td>
-                 <td><input type='checkbox'></td>
-              </tr>
-              <tr>
-                 <th class='row-header'>Row header 1</th>
-                 <td><input type='checkbox'></td>
-                 <td><input type='checkbox'></td>
-                 <td><input type='checkbox'></td>
-              </tr>
-              <tr>
-                 <th class='row-header'>Row header 1</th>
-                 <td><input type='checkbox'></td>
-                 <td><input type='checkbox'></td>
-                 <td><input type='checkbox'></td>
-              </tr>
-          </tbody>
-        </table>
-    </div>
- </div>
-
-  <!--
-   Pure-CSS row and column highlighting in a table
-   -->
-
-   <div class='demo'>
-      <h1>Row and column highlighting
-         <a href='https://css-tricks.com/simple-css-row-column-highlighting/'>&raquo;</a>
-      </h1>
-      <div id='rowColumnHighlight' class='main'>
-         <table cellspacing='0'>
-           <thead>
-             <tr>
-               <th></th>
-               <th class="col">50kg</th>
-               <th class="col">55kg</th>
-               <th class="col">60kg</th>
-               <th class="col">65kg</th>
-               <th class="col">70kg</th>
-             </tr>
-           </thead>
-           <tbody>
-             <tr>
-               <th class="row">160cm</th>
-               <td>20</td>
-               <td>21</td>
-               <td>23</td>
-               <td>25</td>
-               <td>27</td>
-             </tr>
-
-             <tr>
-               <th class="row">165cm</th>
-               <td>18</td>
-               <td>20</td>
-               <td>22</td>
-               <td>24</td>
-               <td>26</td>
-             </tr>
-
-             <tr>
-               <th class="row">170cm</th>
-               <td>17</td>
-               <td>19</td>
-               <td>21</td>
-               <td>23</td>
-               <td>25</td>
-             </tr>
-
-             <tr>
-               <th class="row">175cm</th>
-               <td>16</td>
-               <td>18</td>
-               <td>20</td>
-               <td>22</td>
-               <td>24</td>
-             </tr>
-           <tbody>
-         </table>
+      <!-- Blur -->
+      <div class='demo'>
+         <h1>Text on blurry background
+            <a class='more' href='https://css-tricks.com/frosting-glass-css-filters/'>&raquo;</a>
+         </h1>
+         <div id='blurLabel' class='main'>
+            <div>
+               <article class='glass down'>
+                  <h1>Alps</h1>
+                  <p>Some additional contents</p>
+                  <p>Which could</p>
+                  <p>be quite long</p>
+                  <p>be quite long</p>
+                  <p>be quite long</p>
+                  <p>be quite long</p>
+                  <p>be quite long</p>
+               </article>
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg"  version="1.1" style='display:none'>
+               <defs>
+                  <filter id="blurLabel-blur">
+                     <feGaussianBlur stdDeviation="5"/>
+                  </filter>
+               </defs>
+            </svg>
+         </div>
       </div>
-   </div>
 
+      <!-- CSS patterns -->
+      <div class='demo'>
+         <h1>CSS Patterns
+            <a class='more' href='http://lea.verou.me/css3patterns/'>&raquo;</a>
+         </h1>
+         <div id='cssPatterns' class='main'>
+            <div class='japanese'></div>
+            <div class='rainbow'></div>
+            <div class='blueprint'></div>
+            <div class='lined'></div>
+         </div>
+      </div>
 
- <h1>Style guides</h1>
+      <!-- Blend modes -->
+      <div class='demo'>
+         <h1>Blend modes
+            <a class='more' href='https://css-tricks.com/chaining-multiple-blend-modes/'>&raquo;</a>
+         </h1>
+         <div id='blendmodes' class='main'>
+            <div class="container" id="c-red" style="background-blend-mode: normal">
+               <div class="menu">
+                  <span>Blend mode</span>
+                  <div class="menu__item">
+                     <ul id="blendmodesblend">
+                        <li class="is--active">normal</li>
+                        <li>multiply</li>
+                        <li>overlay</li>
+                        <li>screen</li>
+                        <li>darken</li>
+                        <li>lighten</li>
+                        <li>color-dodge</li>
+                        <li>color-burn</li>
+                        <li>hard-light</li>
+                        <li>soft-light</li>
+                        <li>difference</li>
+                        <li>exclusion</li>
+                        <li>hue</li>
+                        <li>saturation</li>
+                        <li>color</li>
+                        <li>luminosity</li>
+                     </ul>
+                  </div>
+               </div>
+               <ul id="blendmodescolor">
+                  <li class='is--active'>red</li>
+                  <li>yellow</li>
+                  <li>green</li>
+               </ul>
+            </div>
+            <script>blendmodes()</script>
+         </div>
+      </div>
+      <h1>Animation</h1>
 
- <!--
-   Style guides
- -->
- <div class='demo'>
-   <h1>Style guides</h1>
-   <div id='styleguides' class='main'>
-      <ol>
-         <li class='primer'><a href='http://primercss.io'>Primer</a>, the github style
-             <br>
-             <button class="btn" type="button">Button</button>
-             <button class="btn btn-primary" type="button">Button</button>
-         <li>
-             <a href='http://bjankord.github.io/Style-Guide-Boilerplate/'>Boilterplate</a>
-             <br>
-             When working on a style guide, it is useful to automatically generate a file
-             that shows the rendering of the style, and how to use it.
-      </ol>
-   </div>
- </div>
+      <!-- Context shifting -->
+      <div class='demo'>
+         <h1>Context shifting
+            <a class='more' href='https://css-tricks.com/the-importance-of-context-shifting-in-ux-patterns/'>&raquo;</a>
+         </h1>
+         <div id='contextShifting' class='main'>
+            <div class="container">
+               <div class="day day1">
+                  <svg class="lines" xmlns="http://www.w3.org/2000/svg" width="300" height="115" viewBox="0 0 300 115">
+                     <path d="M0 66.6s69.5 29 92-3 53.1-49.3 75.1-24.1 54.2 36.9 76.4 21.4 30.1-26.3 56.5-20.1" />
+                  </svg>
+                  <div class="text">
+                     <span class="header tI">Today</span>
+                     <span class="temp tI">24&#176;F High</span>
+                     <p class="reg-text tI">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quam leo, fringilla sit amet diam ac, condimentum tristique nisi. Duis eleifend odio dui, et fermentum augue bibendum nec. Cras id sem at dolor tempor euismod.</p>
+                     <p class="snow tI">85% Chance of Snow</p>
+                  </div>
+               </div>
+               <div class="day day2">
+                  <svg class="lines" xmlns="http://www.w3.org/2000/svg" width="300" height="115" viewBox="0 0 300 115">
+                     <path d="M0 30s79.3 68.6 112.3 51.5S163.8 9.1 195 32.4s77 33.3 105 18.7" />
+                  </svg>
+                  <div class="text">
+                     <span class="header tI">Tomorrow</span>
+                     <span class="temp tI">38&#176;F High</span>
+                     <p class="reg-text tI">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quam leo, fringilla sit amet diam ac, condimentum tristique nisi. Duis eleifend odio dui, et fermentum augue bibendum nec. Cras id sem at dolor tempor euismod.</p>
+                     <p class="snow tI">53% Chance of Snow</p>
+                  </div>
+               </div>
+               <div class="day day3">
+                  <svg class="lines" xmlns="http://www.w3.org/2000/svg" width="300" height="115" viewBox="0 0 300 115">
+                     <path d="M0 56.3s49.5-38.2 68.7-11.9 65.9 43.6 90.8 19.8 42.6-12.7 48.2-10.7c9.2 3.3 52.2 33.7 72.1-5.1 9.8-19 20.2-5.4 20.2-5.4" />
+                  </svg>
+                  <div class="text">
+                     <span class="header tI">Day After</span>
+                     <span class="temp tI">34&#176;F High</span>
+                     <p class="reg-text tI">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quam leo, fringilla sit amet diam ac, condimentum tristique nisi. Duis eleifend odio dui, et fermentum augue bibendum nec. Cras id sem at dolor tempor euismod.</p>
+                     <p class="snow tI">74% Chance of Snow</p>
+                  </div>
+               </div>
+            </div>
+            <script>contextShifting()</script>
+         </div>
+      </div>
 
- <!--
-   Colors
- -->
- <div class='demo'>
-   <h1>Colors</h1>
-   <div id='colors' class='main'>
-     <ol>
-       <li>Do not <a href='http://ianstormtaylor.com/design-tip-never-use-black/'>use black</a></li>
-       <li>Examples of pages using specific <a href='https://dribbble.com/colors/e86830?percent=30'>dominant colors</a></li>
-       <li>Design with <a href='https://medium.com/@erikdkennedy/7-rules-for-creating-gorgeous-ui-part-1-559d4e805cda'>grey first</a>, to get spacing right</li>
-     </ol>
-   </div>
- </div>
+      <h1>SVG</h1>
 
- <h1>CSS</h1>
+      <!-- Embedded SVG in CSS -->
 
- <!--
-   CSS query to change layout when there are more than a given number
-   of children.
- -->
- <div class='demo'>
-    <h1>Quantitative queries
-       <a href='http://alistapart.com/article/quantity-queries-for-css'>&raquo;</a>
-    </h1>
-    <div id='quantitativeQueries' class='main'>
-       <p>Change CSS if there are 4 children or more</a>
-       <p>This could be used to change the display of a navigation menu, for instance</p>
-       <div class='line if-more-than-3'>
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-       </div>
-       <div class='line if-more-than-3'>
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-          <span>4</span>
-          <span>5</span>
-          <span>6</span>
-          <span>7</span>
-       </div>
-    </div>
- </div>
+      <div class='demo'>
+         <h1>SVG embedded in CSS
+            <a class='more' href='https://github.com/jonathantneal/postcss-write-svg'>&raquo;</a>
+         </h1>
+         <div id='svgincss' class='main'>
+            <p>
+               Using the PostCSS pre-processor, SVG is written in the SASS style sheet, and automatically converted to a background image.
+            </p>
+            <div class='arrow'></div>
+         </div>
+      </div>
 
+      <!-- SVG tabs -->
 
- <!--
-   Regression testing
- -->
- <div class='demo'>
-    <h1>Automatic regression testing</h1>
-    <div id='testing' class='main'>
-       <ol>
-          <li><a href='https://css-tricks.com/automating-css-regression-testing/'>Automatic testing</a></li>
-       </ol>
-    </div>
- </div>
+      <div class='demo'>
+         <h1>SVG Tabs
+            <a class='more' href='https://css-tricks.com/svg-tabs-using-svg-shape-template/'>&raquo;</a>
+         </h1>
+         <div id='svgTabs' class='main'>
+            <svg height="0" width="0" style="position: absolute; margin-left: -100%;">
+               <defs>
+                  <filter id='shadow'>
+                     <feComponentTransfer in="SourceGraphic">
+                        <feFuncR type="discrete" tableValues="0"/>
+                        <feFuncG type="discrete" tableValues="0"/>
+                        <feFuncB type="discrete" tableValues="0"/>
+                     </feComponentTransfer>
+                     <feGaussianBlur stdDeviation="1"/>
+                     <feComponentTransfer>
+                        <feFuncA type="linear" slope="0.2"/>
+                     </feComponentTransfer>
+                     <feOffset dx="5" dy="1" result="shadow"/>
+                     <feComposite in="SourceGraphic" />
+                  </filter>
+                  <linearGradient id="tab-1-bg" x1="0%" y1="0%" x2="0%" y2="65%">
+                     <stop offset="0%" style="stop-color: rgba(136, 195, 229, 1.0);" />
+                     <stop offset="100%" style="stop-color: rgba(118, 160, 192, 1.0);" />
+                  </linearGradient>
+                  <linearGradient id="tab-2-bg" x1="0%" y1="0%" x2="0%" y2="65%">
+                     <stop offset="0%" style="stop-color: rgba(149, 190, 233, 1.0);" />
+                     <stop offset="100%" style="stop-color: rgba(112, 153, 213, 1.0);" />
+                  </linearGradient>
+                  <linearGradient id="tab-3-bg" x1="0%" y1="0%" x2="0%" y2="65%">
+                     <stop offset="0%" style="stop-color: rgba(61, 149, 218, 1.0);" />
+                     <stop offset="100%" style="stop-color: rgba(43, 130, 197, 1.0);" />
+                  </linearGradient>
+                  <linearGradient id="tab-4-bg" x1="0%" y1="0%" x2="0%" y2="65%">
+                     <stop offset="0%" style="stop-color: rgba(72, 204, 243, 1.0);" />
+                     <stop offset="100%" style="stop-color: rgba(71, 194, 243, 1.0);" />
+                  </linearGradient>
+               </defs>
+               <path id="tab-shape" class="tab-shape" d="M116.486,29.036c-23.582-8-14.821-29-42.018-29h-62.4C5.441,0.036,0,5.376,0,12.003v28.033h122v-11H116.486 z">
+            </svg>
+            <nav role="navigation" class="main-navigation">
+               <ul>
+                  <li class="tab-1 active" data-bg-color="rgba(118, 160, 192, 1.0)">
+                     <a href="#home">
+                        <span>Home</span>
+                        <svg viewBox="0 0 122 40">
+                           <use xlink:href="#tab-shape"></use>
+                        </svg>
+                     </a>
+                  </li>
+                  <li class="tab-2" data-bg-color="rgba(112, 153, 213, 1.0)">
+                     <a href="#about">
+                        <span>About</span>
+                        <svg viewBox="0 0 122 40">
+                           <use xlink:href="#tab-shape"></use>
+                        </svg>
+                     </a>
+                  </li>
+                  <li class="tab-3" data-bg-color="rgba(43, 130, 197, 1.0)">
+                     <a href="#clients">
+                        <span>Clients</span>
+                        <svg viewBox="0 0 122 40">
+                           <use xlink:href="#tab-shape"></use>
+                        </svg>
+                     </a>
+                  </li>
+                  <li class="tab-4" data-bg-color="rgba(71, 194, 243, 1.0)">
+                     <a href="#contact">
+                        <span>Contact</span>
+                        <svg viewBox="0 0 122 40">
+                           <use xlink:href="#tab-shape"></use>
+                        </svg>
+                     </a>
+                  </li>
+               </ul>
+            </nav>
+            <div class="main-content">
+               <article class="article">
+                  <h2>An Article Right Here, Boss.</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa totam cumque ad repellendus ab ea repellat aperiam accusantium labore officia est culpa fugiat eaque magnam a. Labore molestias ea at maiores inventore veritatis cupiditate cum doloribus quisquam eum et asperiores!</p>
+               </article>
+            </div>
+            <script>svgTabs()</script>
+         </div>
+      </div>
 
- <h1>Typography</h1>
+      <!-- Second example: SVG filters applied to DOM elements -->
+      <div class='demo'>
+         <h1>Gooey Effect
+            <a class='more' href='https://css-tricks.com/gooey-effect/'>&raquo;</a>
+         </h1>
+         <div id='gooeyEffect' class='main'>
+            <div class='rect'></div>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+               <defs>
+                  <filter id="gooeyEffectBlur">
+                     <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
+                  </filter>
+                  <filter id="gooeyEffectGoo">
+                     <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                     <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                     <feBlend in="SourceGraphic" in2="goo" />
+                  </filter>
+               </defs>
+            </svg>
+            <div class="blobs">
+               <div class="blob">4</div>
+               <div class="blob">3</div>
+               <div class="blob">2</div>
+               <div class="blob">1</div>
+            </div>
+         </div>
+      </div>
 
- <!--
-   System fonts
- -->
+      <h1>Tables</h1>
 
- <div class='demo'>
-    <h1>System fonts
-        <a href='https://css-tricks.com/os-specific-fonts-css/'>&raquo;</a>
-    </h1>
-    <div id='systemfonts' class='main'>
-       <pre class='system'>This paragraph should be using system fonts</pre>
-       <pre class='webkit'>On webkit, we can use a special name</pre>
-       <pre>But not this one</pre>
-       <pre class='menu'>This one is using a menu font</pre>
-    </div>
- </div>
+      <!-- Rotated table header -->
 
- <!--
- First example: http://blog.echoenduring.com/2010/05/13/create-beautiful-css3-typography/
- -->
- <div class='demo'>
-    <h1>Web Typography</h1>
-    <div id='beautifulCSS3' class='main'>
-       <h1>
-         Web Typography
-         <span>A Demo For Beautiful Typography on the Web</span>
-       </h1>
-       <div class="meta">An <span>Article</span> by <span>Matt Ward</span></div>
-       <div class="body">
-          <p>It has been suggested that beautiful and usable websites are created on a foundation of beautiful and usable typography. That makes it a pretty important element that you will want to look at very carefully.</p>
-          <p>Fortunately, CSS offers a variety of styling options that allow you a great deal of control over how your present your content to your viewers and users. This demo - which is entirely driven by CSS - is built to demonstrate the step by step development of attractive typography, moving from basic HTML to fully styled content. You can use the buttons at the top of the page to view the content in various stages of styling, from completely unstyled to the completed design. Please feel free to have a bit of fun by working through the various stages.</p>
-          <span class='date'>Created: May 13, 2010</span>
-       </div>
-    </div>
- </div>
+      <div class='demo'>
+         <h1>Rotated table header</h1>
+         <div id='rotatedHeader' class='main'>
+            <table>
+               <thead>
+                  <tr>
+                     <th></th>
+                     <th class='rotate'>
+                        <div><span>Column Header 1</span></div>
+                     </th>
+                     <th class='rotate'>
+                        <div><span>Column Header 2</span></div>
+                     </th>
+                     <th class='rotate'>
+                        <div><span>Column Header 3</span></div>
+                     </th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <th class='row-header'>Row header 1</th>
+                     <td><input type='checkbox'></td>
+                     <td><input type='checkbox'></td>
+                     <td><input type='checkbox'></td>
+                  </tr>
+                  <tr>
+                     <th class='row-header'>Row header 1</th>
+                     <td><input type='checkbox'></td>
+                     <td><input type='checkbox'></td>
+                     <td><input type='checkbox'></td>
+                  </tr>
+                  <tr>
+                     <th class='row-header'>Row header 1</th>
+                     <td><input type='checkbox'></td>
+                     <td><input type='checkbox'></td>
+                     <td><input type='checkbox'></td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
 
- <!--
-  Text effects
-  -->
+      <!-- Pure-CSS row and column highlighting in a table -->
 
- <div class='demo'>
-    <h1>Text effects
-       <a href='http://snook.ca/archives/html_and_css/css-text-rotation'>&raquo;</a>
-    </h1>
-    <div id='textEffects' class='main'>
-       <span class="date">
-          <span class="day">31</span> 
-          <span class="month">Jul</span> 
-          <span class="year">2009</span>
-       </span>
-       <span class="date">
-          <span class="day">17</span> 
-          <span class="month">Aug</span> 
-          <span class="year">2015</span>
-       </span>
-    </div>
- </div>
+      <div class='demo'>
+         <h1>Row and column highlight
+            <a class='more' href='https://css-tricks.com/simple-css-row-column-highlighting/'>&raquo;</a>
+         </h1>
+         <div id='rowColumnHighlight' class='main'>
+            <table cellspacing='0'>
+               <thead>
+                  <tr>
+                     <th></th>
+                     <th class="col">50kg</th>
+                     <th class="col">55kg</th>
+                     <th class="col">60kg</th>
+                     <th class="col">65kg</th>
+                     <th class="col">70kg</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <th class="row">160cm</th>
+                     <td>20</td>
+                     <td>21</td>
+                     <td>23</td>
+                     <td>25</td>
+                     <td>27</td>
+                  </tr>
+                  <tr>
+                     <th class="row">165cm</th>
+                     <td>18</td>
+                     <td>20</td>
+                     <td>22</td>
+                     <td>24</td>
+                     <td>26</td>
+                  </tr>
+                  <tr>
+                     <th class="row">170cm</th>
+                     <td>17</td>
+                     <td>19</td>
+                     <td>21</td>
+                     <td>23</td>
+                     <td>25</td>
+                  </tr>
+                  <tr>
+                     <th class="row">175cm</th>
+                     <td>16</td>
+                     <td>18</td>
+                     <td>20</td>
+                     <td>22</td>
+                     <td>24</td>
+                  </tr>
+               <tbody>
+            </table>
+         </div>
+      </div>
 
- <!--
-  Responsive design to display titles
- -->
+      <h1>Style guides</h1>
 
- <div class='demo'>
-    <h1>Multi-line responsive title
-       <a href='https://css-tricks.com/useful-flexbox-technique-alignment-shifting-wrapping/'>&raquo;</a>
-    </h1>
-    <div id='multiLineTitle' class='main'>
-       <div class='wide'>
-          <h1>Main Title Here</h1>
-          <h2>When using a wide page</h2>
-       </div>
-       <div class='narrow'>
-          <h1>Main Title Here</h1>
-          <h2>When in a narrow page</h2>
-       </div>
-    </div>
- </div>
+      <!-- Style guides -->
 
+      <div class='demo'>
+         <h1>Style guides</h1>
+         <div id='styleguides' class='main'>
+            <ol>
+               <li class='primer'><a href='http://primercss.io'>Primer</a>, the github style
+                  <br>
+                  <button class="btn" type="button">Button</button>
+                  <button class="btn btn-primary" type="button">Button</button>
+               <li>
+                  <a href='http://bjankord.github.io/Style-Guide-Boilerplate/'>Boilterplate</a>
+                  <br>
+                  When working on a style guide, it is useful to automatically generate a file
+                  that shows the rendering of the style, and how to use it.
+            </ol>
+         </div>
+      </div>
 
- <h1>Forms</h1>
+      <!-- Colors -->
 
- <div class='demo'>
-    <h1>Sliders
-        <a class='more' href='https://css-tricks.com/custom-interactive-range-inputs/'>&raquo;</a>
-    </h1>
-    <div id='sliders' class='main'>
-       <div class="slidershell" id="slidershell1" style='margin-top: 50px'>
-          <div class="sliderfill" id="sliderfill1"></div>
-          <div class="slidertrack" id="slidertrack1"></div>
-          <div class="sliderthumb" id="sliderthumb1"></div>
-          <div class="slidervalue" id="slidervalue1">0</div>
-          <input class="slider" id="slider1" type="range" min="0" max="100" value="0"
-          oninput="slider_showValue(value,1,false);" onchange="slider_showValue(value,1,false);"/>
-       </div>
-       <div class="slidershell" id="slidershell2" style='margin-top: 50px'>
-          <div class="sliderfill" id="sliderfill2"></div>
-          <div class="slidertrack" id="slidertrack2"></div>
-          <div class="sliderthumb" id="sliderthumb2"></div>
-          <div class="slidervalue" id="slidervalue2">0</div>
-          <input class="slidervertical" id="slider2" type="range" min="0" max="100" value="0"
-                 orient="vertical"
-                 oninput="slider_showValue(value,2,true /* vertical */);"
-                 onchange="slider_showValue(value,2,true /* vertical */);"/>
-       </div>
-       <script>
-          slider_setValue(88,1,false);
-          slider_setValue(34,2,true /* vertical */);
-       </script>
-    </div>
- </div>
+      <div class='demo'>
+         <h1>Colors</h1>
+         <div id='colors' class='main'>
+            <ol>
+               <li>Do not <a href='http://ianstormtaylor.com/design-tip-never-use-black/'>use black</a></li>
+               <li>Examples of pages using specific <a href='https://dribbble.com/colors/e86830?percent=30'>dominant colors</a></li>
+               <li>Design with <a href='https://medium.com/@erikdkennedy/7-rules-for-creating-gorgeous-ui-part-1-559d4e805cda'>grey first</a>, to get spacing right</li>
+            </ol>
+         </div>
+      </div>
 
- <!-- Custom forms -->
- <div class='demo'>
-    <h1>(design) Form
-       <a class='more' href='https://medium.com/@kubachrzecijanek/how-to-build-an-awesome-form-1e9b2c1bd00d'>&raquo;</a>
-    </h1>
-    <div id='customForms' class='main'>
-       <form>
-          <div class='no-label' id='customForms__full_div'>
-             <label for='#customForms__full'>Full Name</label>
-             <input id='customForms__full' placeholder='Full Name'/>
-          </div>
-          <div class='no-label' id='customForms__email_div'>
-             <label for='#customForms__email'>Email</label>
-             <input id='customForms__email' placeholder='Email'/>
-          </div>
-          <div class='no-label' id='customForms__passwd_div'>
-             <label for='#customForms__passwd'>Password</label>
-             <input id='customForms__passwd' placeholder='Password'/>
-          </div>
-          <div class='no-label'>
-             <input type='submit' value='Sign Up'>
-          </div>
-       </form>
-    </div>
- </div>
+      <h1>CSS</h1>
 
- <!--
-   Floating labels
-  -->
- <div class='demo'>
-    <h1>Floating labels</h1>
-    <div id='floatLabels' class='main'>
-       <form>
-          <div class='floatlabel'>
-             <input type='text' id='firstName' required>
-             <label for='firstName'>First Name</label>
-          </div>
-          <div class='floatlabel floatlabel--bottom'>
-             <input type='text' id='lastName' required>
-             <label for='lastName'>Last Name</label>
-          </div>
-          <div class='floatlabel floatlabel--top'>
-             <input type='text' id='email' required>
-             <label for='email'>Email</label>
-          </div>
-       </form>
-    </div>
- </div>
+      <!-- Flexbox media object -->
 
- <h1>Design</h1>
+      <div class='demo'>
+         <h1>Flexbox media object
+             <a class='more' href='http://philipwalton.github.io/solved-by-flexbox/demos/media-object/'>&raquo;</a>
+         </h1>
+         <div id='flexboxmedia' class='main'>
+            <div class='container'>
+               <div class='Grid-cell'>
+                  <div class="Media">
+                    <figure class="Media-figure">
+                        <span class="fa fa-lg fa-comments"></span>
+                    </figure>
+                    <div class="Media-body">
+                        <h3 class="Media-title">Using Icons</h3>
+                        <p>Donec imperdiet sem leo, id rutrum risus aliquam vitae. Vestibulum ac turpis non lacus dignissim dignissim eu sed dui.</p>
+                    </div>
+                  </div>
+               </div>
 
- <!--
-   Roadmaps
- -->
- <div class='demo'>
-    <h1>Roadmap</h1>
-    <div id='roadmap' class='main'>
-       <h1>Roadmap (source: Intercom on Product Management by Des Traynor)</h1>
-       <div class='line'>
-           <span class='name'></span>
-           <span class='duration--1week'></span>  <!-- starting mid-june -->
-           <span class='month duration--4weeks'>Jun</span>
-           <span class='month duration--4weeks'>Jul</span>
-           <span class='now'></span>
-           <span class='month duration--4weeks'>Aug</span>
-           <span class='month duration--4weeks'>Sep</span>
-           <span class='month duration--4weeks'>Oct</span>
-       </div>
-       <div class='group group--blue'>
-           <h1><span>Design</span></h1>
-           <div class='line'>
-               <span class='name'>
+               <div class='Grid-cell'>
+                  <div class="Media Media--center">
+                    <figure class="Media-figure">
+                        <span class="fa fa-lg fa-info-circle"></span>
+                    </figure>
+                    <div class="Media-body">
+                        <h3 class="Media-title">Vertically centered</h3>
+                        <p>Donec imperdiet sem leo, id rutrum risus aliquam vitae. Vestibulum ac turpis non lacus dignissim dignissim eu sed dui.</p>
+                    </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <!-- Flexbox -->
+      <div class='demo'>
+         <h1>Flexbox Grids
+            <a class='more' href='http://philipwalton.github.io/solved-by-flexbox/'>&raquo;</a>
+         </h1>
+         <div id='flexbox' class='main'>
+            <div class='page'>
+               <header>
+                  <h1 class='title'>Solved <i>by</i> Flexbox</h1>
+               </header>
+               <main class='content'>
+                  <div class='Grid Grid-gutter Grid--full large-Grid--fit'>
+                     <div class='Grid-cell'>
+                         A responsive grid.<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis velit non gravida venenatis. Praesent consequat lectus purus, ut scelerisque velit condimentum eu.
+                     </div>
+                     <div class='Grid-cell'>
+                         Try resizing the window
+                     </div>
+                     <div class='Grid-cell'>
+                         Another cell
+                     </div>
+                  </div>
+
+                  <!-- using different alignments -->
+                  <div class='Grid Grid--top Grid-gutter'>
+                     <div class='Grid-cell'>
+                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis velit non gravida venenatis. Praesent consequat lectus purus, ut scelerisque velit condimentum eu.
+                     </div>
+                     <div class='Grid-cell'>
+                         All cells are top aligned
+                     </div>
+                     <div class='Grid-cell'>
+                         Another cell
+                     </div>
+                  </div>
+
+                  <div class='Grid Grid--center Grid-gutter'>
+                     <div class='Grid-cell'>
+                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis velit non gravida venenatis. Praesent consequat lectus purus, ut scelerisque velit condimentum eu.
+                     </div>
+                     <div class='Grid-cell'>
+                         All cells are centered aligned
+                     </div>
+                     <div class='Grid-cell'>
+                         Another cell
+                     </div>
+                  </div>
+
+                  <div class='Grid Grid--bottom Grid-gutter'>
+                     <div class='Grid-cell'>
+                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis velit non gravida venenatis. Praesent consequat lectus purus, ut scelerisque velit condimentum eu.
+                     </div>
+                     <div class='Grid-cell'>
+                         All cells are bottom aligned
+                     </div>
+                     <div class='Grid-cell'>
+                         Another cell
+                     </div>
+                  </div>
+               </main>
+               <footer>Sticky footer, always at bottom even if content is empty</footer>
+            </div>
+         </div>
+      </div>
+
+      <!--
+         CSS query to change layout when there are more than a given number
+         of children.
+         -->
+
+      <div class='demo'>
+         <h1>Quantitative queries
+            <a href='http://alistapart.com/article/quantity-queries-for-css'>&raquo;</a>
+         </h1>
+         <div id='quantitativeQueries' class='main'>
+            <p>Change CSS if there are 4 children or more</a>
+            <p>This could be used to change the display of a navigation menu, for instance</p>
+            <div class='line if-more-than-3'>
+               <span>1</span>
+               <span>2</span>
+               <span>3</span>
+            </div>
+            <div class='line if-more-than-3'>
+               <span>1</span>
+               <span>2</span>
+               <span>3</span>
+               <span>4</span>
+               <span>5</span>
+               <span>6</span>
+               <span>7</span>
+            </div>
+         </div>
+      </div>
+
+      <!-- Regression testing -->
+
+      <div class='demo'>
+         <h1>Automatic regression testing</h1>
+         <div id='testing' class='main'>
+            <ol>
+               <li><a href='https://css-tricks.com/automating-css-regression-testing/'>Automatic testing</a></li>
+            </ol>
+         </div>
+      </div>
+
+      <h1>Typography</h1>
+
+      <!-- System fonts -->
+
+      <div class='demo'>
+         <h1>System fonts
+            <a href='https://css-tricks.com/os-specific-fonts-css/'>&raquo;</a>
+         </h1>
+         <div id='systemfonts' class='main'>
+            <pre class='system'>This paragraph should be using system fonts</pre>
+            <pre class='webkit'>On webkit, we can use a special name</pre>
+            <pre>But not this one</pre>
+            <pre class='menu'>This one is using a menu font</pre>
+         </div>
+      </div>
+
+      <!--
+         First example: http://blog.echoenduring.com/2010/05/13/create-beautiful-css3-typography/
+         -->
+
+      <div class='demo'>
+         <h1>Web Typography</h1>
+         <div id='beautifulCSS3' class='main'>
+            <h1>
+               Web Typography
+               <span>A Demo For Beautiful Typography on the Web</span>
+            </h1>
+            <div class="meta">An <span>Article</span> by <span>Matt Ward</span></div>
+            <div class="body">
+               <p>It has been suggested that beautiful and usable websites are created on a foundation of beautiful and usable typography. That makes it a pretty important element that you will want to look at very carefully.</p>
+               <p>Fortunately, CSS offers a variety of styling options that allow you a great deal of control over how your present your content to your viewers and users. This demo - which is entirely driven by CSS - is built to demonstrate the step by step development of attractive typography, moving from basic HTML to fully styled content. You can use the buttons at the top of the page to view the content in various stages of styling, from completely unstyled to the completed design. Please feel free to have a bit of fun by working through the various stages.</p>
+               <span class='date'>Created: May 13, 2010</span>
+            </div>
+         </div>
+      </div>
+
+      <!-- Text effects -->
+
+      <div class='demo'>
+         <h1>Text effects
+            <a href='http://snook.ca/archives/html_and_css/css-text-rotation'>&raquo;</a>
+         </h1>
+         <div id='textEffects' class='main'>
+            <span class="date">
+            <span class="day">31</span>
+            <span class="month">Jul</span>
+            <span class="year">2009</span>
+            </span>
+            <span class="date">
+            <span class="day">17</span>
+            <span class="month">Aug</span>
+            <span class="year">2015</span>
+            </span>
+         </div>
+      </div>
+
+      <!-- Responsive design to display titles -->
+
+      <div class='demo'>
+         <h1>Multi-line responsive title
+            <a href='https://css-tricks.com/useful-flexbox-technique-alignment-shifting-wrapping/'>&raquo;</a>
+         </h1>
+         <div id='multiLineTitle' class='main'>
+            <div class='wide'>
+               <h1>Main Title Here</h1>
+               <h2>When using a wide page</h2>
+            </div>
+            <div class='narrow'>
+               <h1>Main Title Here</h1>
+               <h2>When in a narrow page</h2>
+            </div>
+         </div>
+      </div>
+
+      <h1>Forms</h1>
+
+      <!-- Input add ons -->
+
+      <div class='demo'>
+         <h1>Input add-ons
+             <a class='more' href='http://philipwalton.github.io/solved-by-flexbox/demos/input-add-ons/'>&raquo;</a>
+         </h1>
+         <div id='inputAddons' class='main'>
+            <p style='margin-bottom: 50px'>
+               All fields+addons have same width, despite varying width of add-on
+            </p>
+
+            <div class="InputAddOn">
+               <input class="InputAddOn-field">
+               <button class="InputAddOn-item">Go</button>
+            </div>
+            <div class="InputAddOn">
+               <span class="InputAddOn-item">Amount</span>
+               <input class="InputAddOn-field">
+            </div>
+            <div class="InputAddOn">
+               <span class="InputAddOn-item">
+                 <span class="fa fa-envelope"></span>
+               </span>
+               <input class="InputAddOn-field">
+               <button class="InputAddOn-item">Send</button>
+            </div>
+            <div class="InputAddOn">
+               <button class="InputAddOn-item">Value</button>
+               <select class="InputAddOn-field">
+                  <option>Value 1</option>
+                  <option>Value 2</option>
+               </select>
+            </div>
+         </div>
+      </div>
+
+      <!-- Sliders -->
+
+      <div class='demo'>
+         <h1>Sliders
+            <a class='more' href='https://css-tricks.com/custom-interactive-range-inputs/'>&raquo;</a>
+         </h1>
+         <div id='sliders' class='main'>
+            <div class="slidershell" id="slidershell1" style='margin-top: 50px'>
+               <div class="sliderfill" id="sliderfill1"></div>
+               <div class="slidertrack" id="slidertrack1"></div>
+               <div class="sliderthumb" id="sliderthumb1"></div>
+               <div class="slidervalue" id="slidervalue1">0</div>
+               <input class="slider" id="slider1" type="range" min="0" max="100" value="0"
+                  oninput="slider_showValue(value,1,false);" onchange="slider_showValue(value,1,false);"/>
+            </div>
+            <div class="slidershell" id="slidershell2" style='margin-top: 50px'>
+               <div class="sliderfill" id="sliderfill2"></div>
+               <div class="slidertrack" id="slidertrack2"></div>
+               <div class="sliderthumb" id="sliderthumb2"></div>
+               <div class="slidervalue" id="slidervalue2">0</div>
+               <input class="slidervertical" id="slider2" type="range" min="0" max="100" value="0"
+                  orient="vertical"
+                  oninput="slider_showValue(value,2,true /* vertical */);"
+                  onchange="slider_showValue(value,2,true /* vertical */);"/>
+            </div>
+            <script>
+               slider_setValue(88,1,false);
+               slider_setValue(34,2,true /* vertical */);
+            </script>
+         </div>
+      </div>
+
+      <!-- Custom forms -->
+
+      <div class='demo'>
+         <h1>(design) Form
+            <a class='more' href='https://medium.com/@kubachrzecijanek/how-to-build-an-awesome-form-1e9b2c1bd00d'>&raquo;</a>
+         </h1>
+         <div id='customForms' class='main'>
+            <form>
+               <div class='no-label' id='customForms__full_div'>
+                  <label for='#customForms__full'>Full Name</label>
+                  <input id='customForms__full' placeholder='Full Name'/>
+               </div>
+               <div class='no-label' id='customForms__email_div'>
+                  <label for='#customForms__email'>Email</label>
+                  <input id='customForms__email' placeholder='Email'/>
+               </div>
+               <div class='no-label' id='customForms__passwd_div'>
+                  <label for='#customForms__passwd'>Password</label>
+                  <input id='customForms__passwd' placeholder='Password'/>
+               </div>
+               <div class='no-label'>
+                  <input type='submit' value='Sign Up'>
+               </div>
+            </form>
+         </div>
+      </div>
+
+      <!-- Floating labels -->
+
+      <div class='demo'>
+         <h1>Floating labels</h1>
+         <div id='floatLabels' class='main'>
+            <form>
+               <div class='floatlabel'>
+                  <input type='text' id='firstName' required>
+                  <label for='firstName'>First Name</label>
+               </div>
+               <div class='floatlabel floatlabel--bottom'>
+                  <input type='text' id='lastName' required>
+                  <label for='lastName'>Last Name</label>
+               </div>
+               <div class='floatlabel floatlabel--top'>
+                  <input type='text' id='email' required>
+                  <label for='email'>Email</label>
+               </div>
+            </form>
+         </div>
+      </div>
+
+      <h1>Design</h1>
+
+      <!-- Roadmaps -->
+
+      <div class='demo'>
+         <h1>Roadmap</h1>
+         <div id='roadmap' class='main'>
+            <h1>Roadmap (source: Intercom on Product Management by Des Traynor)</h1>
+            <div class='line'>
+               <span class='name'></span>
+               <span class='duration--1week'></span>  <!-- starting mid-june -->
+               <span class='month duration--4weeks'>Jun</span>
+               <span class='month duration--4weeks'>Jul</span>
+               <span class='now'></span>
+               <span class='month duration--4weeks'>Aug</span>
+               <span class='month duration--4weeks'>Sep</span>
+               <span class='month duration--4weeks'>Oct</span>
+            </div>
+            <div class='group group--blue'>
+               <h1><span>Design</span></h1>
+               <div class='line'>
+                  <span class='name'>
                   <img src='http://www.adacore.com/stavatar/30/ayre.jpg?s=30&d=mm'>
                   Joe
-               </span>
-               <span class='busy duration--5weeks'>IOS App</span>
-               <span class='busy duration--6weeks'>Android App</span>
-           </div>
-           <div class='line'>
-               <span class='name'>
+                  </span>
+                  <span class='busy duration--5weeks'>IOS App</span>
+                  <span class='busy duration--6weeks'>Android App</span>
+               </div>
+               <div class='line'>
+                  <span class='name'>
                   <img src='http://www.adacore.com/stavatar/30/mason.jpg?s=30&d=mm'>
                   Sarah
-               </span>
-               <span class='busy duration--3weeks'>Blog</span>
-               <span class='busy duration--5weeks'>Marketing Site</span>
-               <span class='busy duration--6weeks'>Docs Redesign</span>
-           </div>
-           <div class='line'>
-               <span class='name'>
+                  </span>
+                  <span class='busy duration--3weeks'>Blog</span>
+                  <span class='busy duration--5weeks'>Marketing Site</span>
+                  <span class='busy duration--6weeks'>Docs Redesign</span>
+               </div>
+               <div class='line'>
+                  <span class='name'>
                   <img src='http://www.adacore.com/stavatar/30/dross.jpg?s=30&d=mm'>
                   Mary
-               </span>
-               <span class='busy duration--7weeks'>Emails</span>
-               <span class='busy duration--5weeks'>Advertisement</span>
-           </div>
-           <div class='line'>
-               <span class='name'>
+                  </span>
+                  <span class='busy duration--7weeks'>Emails</span>
+                  <span class='busy duration--5weeks'>Advertisement</span>
+               </div>
+               <div class='line'>
+                  <span class='name'>
                   <img src='http://www.adacore.com/stavatar/30/mellor.jpg?s=30&d=mm'>
                   Russ
-               </span>
-               <span class='busy duration--7weeks'>UI Refresh</span>
-               <span class='busy duration--3weeks'>Holidays</span>
-           </div>
-       </div>
-       <div class='group group--green'>
-           <h1><span>Development</h1>
-           <div class='line'>
-               <span class='name'>
+                  </span>
+                  <span class='busy duration--7weeks'>UI Refresh</span>
+                  <span class='busy duration--3weeks'>Holidays</span>
+               </div>
+            </div>
+            <div class='group group--green'>
+               <h1><span>Development</h1>
+               <div class='line'>
+                  <span class='name'>
                   <img src='http://www.adacore.com/stavatar/30/briot.jpg?s=30&d=mm'>
                   Rob
-               </span>
-               <span class='busy duration--6weeks'>API Redesign</span>
-               <span class='busy duration--5weeks'>IOS App</span>
-           </div>
-           <div class='line'>
-               <span class='name'>
+                  </span>
+                  <span class='busy duration--6weeks'>API Redesign</span>
+                  <span class='busy duration--5weeks'>IOS App</span>
+               </div>
+               <div class='line'>
+                  <span class='name'>
                   <img src='http://www.adacore.com/stavatar/30/setton.jpg?s=30&d=mm'>
                   Justin
-               </span>
-               <span class='free duration--2weeks'></span>
-               <span class='busy duration--5weeks'>Reporting Feature</span>
-               <span class='busy duration--4weeks'>Marketing Site</span>
-            </div>
-           <div class='line'>
-               <span class='name'>
+                  </span>
+                  <span class='free duration--2weeks'></span>
+                  <span class='busy duration--5weeks'>Reporting Feature</span>
+                  <span class='busy duration--4weeks'>Marketing Site</span>
+               </div>
+               <div class='line'>
+                  <span class='name'>
                   <img src='http://www.adacore.com/stavatar/30/reboul.jpg?s=30&d=mm'>
                   Lisa
-               </span>
-               <span class='busy duration--5weeks'>OS X Client</span>
-               <span class='free duration--1week'></span>
-               <span class='busy duration--4weeks'>Internal</span>
-               <span class='busy duration--4weeks'>Performance</span>
-            </div>
-           <div class='line'>
-               <span class='name'>
+                  </span>
+                  <span class='busy duration--5weeks'>OS X Client</span>
+                  <span class='free duration--1week'></span>
+                  <span class='busy duration--4weeks'>Internal</span>
+                  <span class='busy duration--4weeks'>Performance</span>
+               </div>
+               <div class='line'>
+                  <span class='name'>
                   <img src='http://www.adacore.com/stavatar/30/fofanov.jpg?s=30&d=mm'>
                   Carl
-               </span>
-               <span class='busy duration--3weeks'>JS</span>
-               <span class='busy duration--7weeks'>Blog</span>
-               <span class='busy duration--3weeks'>Emails</span>
+                  </span>
+                  <span class='busy duration--3weeks'>JS</span>
+                  <span class='busy duration--7weeks'>Blog</span>
+                  <span class='busy duration--3weeks'>Emails</span>
+               </div>
             </div>
-       </div>
-    </div>
-  </div>
+         </div>
+      </div>
 
- <!--
-   Iconify content
- -->
+      <!-- Iconify content -->
 
- <div class='demo'>
-    <h1>Iconify content
-       <a href='http://codepen.io/lonekorean/full/doXjJG/'>&raquo;</a>
-    </h1>
-    <div id='iconifyContent' class='main'>
-       <iframe style='width:100%; height: 800px' src='http://codepen.io/lonekorean/full/doXjJG/'></iframe>
-    </div>
- </div>
-
-</body>
+      <div class='demo'>
+         <h1>Iconify content
+            <a href='http://codepen.io/lonekorean/full/doXjJG/'>&raquo;</a>
+         </h1>
+         <div id='iconifyContent' class='main'>
+            <iframe style='width:100%; height: 800px' src='http://codepen.io/lonekorean/full/doXjJG/'></iframe>
+         </div>
+      </div>
+   </body>
 </html>
-

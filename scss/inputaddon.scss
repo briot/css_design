@@ -1,0 +1,42 @@
+#inputAddons {
+   .InputAddOn {
+      width: 300px;
+      display: flex;
+
+      box-sizing: border-box;
+      margin-bottom: 1.5em;
+   }
+   
+   @mixin addon-style() {
+      box-sizing: border-box;
+      border: 1px solid rgba(147,128,108,.25);
+      padding: .5em .75em;
+      margin: 0;
+
+      &:first-child {
+         border-radius: 2px 0 0 2px;
+      }
+      &:last-child {
+         border-radius:0 2px 2px 0;
+      }
+   }
+
+   .InputAddOn-field {
+      flex: 1;
+      @include addon-style();
+
+      &:not(:first-child) {
+         border-left: 0;
+      }
+      &:not(:last-child) {
+         border-right: 0;
+      }
+   }
+   .InputAddOn-item {
+      @include addon-style();
+      background-color: rgba(147,128,108,.1);
+      color: #666;
+      font: inherit;
+      font-weight: 400;
+   }
+}

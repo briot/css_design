@@ -3,6 +3,7 @@ $fa-font-path: '.';
 
 $left-side-width: 160px;
 $body-margin: 8px;
+$page-margin-top: 30px;
 
 body {
    margin: $body-margin;
@@ -13,7 +14,7 @@ body {
    position: absolute;
    left: $left-side-width + $body-margin; // no extra space to preserve :hover
    top: 0;
-   padding-top: 30px;
+   padding-top: $page-margin-top;
    padding-left: 20px;
    right: 0;
    bottom: 0;
@@ -50,3 +51,4 @@ body > h1 {
 }
 
 @import "customforms";
+@import "flexbox";

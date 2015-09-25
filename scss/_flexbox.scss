@@ -1,0 +1,149 @@
+#flexbox {
+   .page {
+      margin-top: -$page-margin-top; // compensate for the one added for .main
+
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+   }
+
+   header {
+      background: rgba(147,128,108,.1);
+      padding: 1.5em;
+      .title {
+         display: inline;
+         font-family: 'Open Sans', sans-serif;
+         font-size: 1.5em;
+         font-weight: 600;
+         word-spacing: 0.08em;
+         -webkit-font-kerning: normal;
+         text-rendering: optimizelegibility;
+         letter-spacing: -.015em;
+         line-height: 1;
+         margin: 0 0 .15em;
+         color: rgb(64,64,64);
+         i {
+            font-family: serif;
+            font-weight: 400;
+         }
+      }
+   }
+   footer {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 14px;
+      background: #404040;
+      color: #999;
+      padding: 1em;
+      text-align: center;
+   }
+
+   .content {
+      flex: 1;
+
+      margin-top: 10px;  // space between header and contents
+   }
+
+   // The grid
+
+   .Grid {
+      display: flex;
+      flex-wrap: wrap;  // wrap when items no longer fit horizontally
+   }
+   .Grid-gutter {
+      $gutter-size: 1em;
+      margin: (-$gutter-size) 0 $gutter-size (-$gutter-size);
+      > .Grid-cell {
+         margin: $gutter-size 0 0 $gutter-size;
+      }
+   }
+
+   .Grid-cell {
+      box-sizing: border-box;
+      text-align: center;
+      background: rgba(147,128,108,.1);
+      width: 100%;
+      border-radius: 3px;
+   }
+
+   // Responsive grid
+   /* Base classes for all media */
+   .Grid--fit > .Grid-cell {
+     flex: 1;
+   }
+   .Grid--full > .Grid-cell {
+     flex: 0 0 100%;
+   }
+   .Grid--1of2 > .Grid-cell {
+     flex: 0 0 50%
+   }
+   .Grid--1of3 > .Grid-cell {
+     flex: 0 0 33.3333%
+   }
+   .Grid--1of4 > .Grid-cell {
+     flex: 0 0 25%
+   }
+   .Grid-cell {
+      flex: 1;
+   }
+   
+   /* Small to medium screens */
+   @media (min-width: 24em) {
+     .small-Grid--fit > .Grid-cell {
+       flex: 1;
+     }
+     .small-Grid--full > .Grid-cell {
+       flex: 0 0 100%;
+     }
+     .small-Grid--1of2 > .Grid-cell {
+       flex: 0 0 50%
+     }
+     .small-Grid--1of3 > .Grid-cell {
+       flex: 0 0 33.3333%
+     }
+     .small-Grid--1of4 > .Grid-cell {
+       flex: 0 0 25%
+     }
+   }
+   
+   /* Large screens */
+   @media (min-width: 48em) {
+     .large-Grid--fit > .Grid-cell {
+       flex: 1;
+     }
+     .large-Grid--full > .Grid-cell {
+       flex: 0 0 100%;
+     }
+     .large-Grid--1of2 > .Grid-cell {
+       flex: 0 0 50%
+     }
+     .large-Grid--1of3 > .Grid-cell {
+       flex: 0 0 33.3333%
+     }
+     .large-Grid--1of4 > .Grid-cell {
+       flex: 0 0 25%
+     }
+   }
+
+   // Alignments
+   /* Alignment per row */
+   .Grid--top {
+     align-items: flex-start;
+   }
+   .Grid--bottom {
+     align-items: flex-end;
+   }
+   .Grid--center {
+     align-items: center;
+   }
+   
+   /* Alignment per cell */
+   .Grid-cell--top {
+     align-self: flex-start;
+   }
+   .Grid-cell--bottom {
+     align-self: flex-end;
+   }
+   .Grid-cell--center {
+     align-self: center;
+   }
+}
