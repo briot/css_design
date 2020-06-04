@@ -8,42 +8,47 @@ var postcss = require('gulp-postcss');
 var fa_fonts = 'node_modules/font-awesome/fonts';
 
 var postcss_src = ['postcss/*'];
-gulp.task('postcss', function() {
+function do_postcss() {
    return gulp.src(postcss_src)
       .pipe(postcss([require('postcss-write-svg')()
                     ]))
       .pipe(concat('postcss.css'))
       .pipe(gulp.dest('dist/'));
-});
+}
 
 var scss_src = ['scss/*.scss'];
-gulp.task('css', function() {
+function do_css() {
    return gulp.src(scss_src)
       .pipe(plumber())  // errors are not fatal
       .pipe(sass({outputStyle: 'expanded'}))
       .pipe(autoprefix())
       .pipe(concat('styles.css'))
       .pipe(gulp.dest('dist/'));
-});
+}
 
 var js_src = ['js/*.js'];
-gulp.task('js', function() {
+function do_js() {
    return gulp.src(js_src)
       .pipe(plumber()) // errors are not fatal
       .pipe(concat('scripts.js'))
       .pipe(gulp.dest('dist/'));
-});
+}
 
 var media_src = ['media/*'];
-gulp.task('media', function() {
+function do_media() {
    return gulp.src(media_src.concat([fa_fonts + '/*']))
       .pipe(gulp.dest('dist/'));
-});
+}
 
-gulp.task('default', ['css', 'js', 'media']);
-gulp.task('watch', ['default'], function() {
-   gulp.watch(scss_src, ['css']);
-   gulp.watch(postcss_src, ['postcss']);
-   gulp.watch(js_src, ['js']);
-   gulp.watch(media_src, ['media']);
+gulp.task('postcss', do_postcss);
+gulp.task('css', do_css);
+gulp.task('js', do_js);
+gulp.task('media', do_media);
+
+//gulp.task('default', ['css', 'js', 'media']);
+gulp.task('watch', function() {
+   gulp.watch(scss_src, do_css);
+   gulp.watch(postcss_src, do_postcss);
+   gulp.watch(js_src, do_js);
+   gulp.watch(media_src, do_media);
 });

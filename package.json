@@ -4,6 +4,9 @@
     "description": "Various design attempts",
     "main": "index.html",
     "license": "GPL-3.0",
+    "scripts": {
+       "start": "gulp watch"
+    },
     "repository": {
         "type": "git",
         "url": ""
