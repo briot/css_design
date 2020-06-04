@@ -15,6 +15,10 @@
       <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
    </head>
    <body>
+      <!--  SEE ALSO -->
+      <a href="https://css-tricks.com/drag-and-drop-file-uploading/">drag-and-drop file uploading</a>
+      <a href="http://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/">Customizing file input</a>
+
       <!-- meta: see https://css-tricks.com/probably-use-initial-scale1/ -->
 
       <h1>Images</h1>
@@ -292,47 +296,160 @@
 
       <h1>Tables</h1>
 
-      <!-- Rotated table header -->
+      <!-- Numeral tables -->
 
       <div class='demo'>
-         <h1>Rotated table header</h1>
-         <div id='rotatedHeader' class='main'>
+         <h1>Numeral values</h1>
+         <div class='main' id='tablenumerals'>
             <table>
+               <caption>
+                  Various fonts for numerals in tables<br>
+                  <i>See alignment on decimal separator</i>
+               </caption>
                <thead>
                   <tr>
                      <th></th>
-                     <th class='rotate'>
-                        <div><span>Column Header 1</span></div>
-                     </th>
-                     <th class='rotate'>
-                        <div><span>Column Header 2</span></div>
-                     </th>
-                     <th class='rotate'>
-                        <div><span>Column Header 3</span></div>
-                     </th>
+                     <th>Lining</th>
+                     <th>Old style</th>
                   </tr>
                </thead>
                <tbody>
                   <tr>
-                     <th class='row-header'>Row header 1</th>
-                     <td><input type='checkbox'></td>
-                     <td><input type='checkbox'></td>
-                     <td><input type='checkbox'></td>
+                     <th>Proportional</th>
+                     <td class='proportional-lining'>
+                        409,280<br>367,112<br>155,068
+                     </td>
+                     <td class='proportional-old'>
+                        409,280<br>367,112<br>155,068
+                     </td>
                   </tr>
                   <tr>
-                     <th class='row-header'>Row header 1</th>
-                     <td><input type='checkbox'></td>
-                     <td><input type='checkbox'></td>
-                     <td><input type='checkbox'></td>
+                     <th>Tabular</th>
+                     <td class='tabular-lining'>
+                        409,280<br>367,112<br>155,068
+                     </td>
+                     <td class='tabular-old'>
+                        409,280<br>367,112<br>155,068
+                     </td>
                   </tr>
                   <tr>
-                     <th class='row-header'>Row header 1</th>
-                     <td><input type='checkbox'></td>
-                     <td><input type='checkbox'></td>
-                     <td><input type='checkbox'></td>
+                     <th>Fixed font</th>
+                     <td class='fixed'>
+                        409,280<br>367,112<br>155,068
+                     </td>
+                     <td class='fixed-old'>
+                        409,280<br>367,112<br>155,068
+                     </td>
                   </tr>
                </tbody>
             </table>
+
+            <table>
+               <thead>
+                  <tr>
+                     <th></th>
+                     <th>Diagonal</th>
+                     <th>Stacked</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <th>Fractions</th>
+                     <td class='fraction-diagonal'>
+                        1/2<br>3/4<br>3/400
+                     </td>
+                     <td class='fraction-stacked'>
+                        1/2<br>3/4<br>3/400
+                     </td>
+                  </tr>
+                  <tr>
+                     <th>Ordinal</th>
+                     <td class='ordinal'>
+                        1st<br>2nd<br>3rd
+                     </td>
+                     <td></td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </div>
+
+      <!-- Rotated table header -->
+
+      <div class='demo'>
+         <h1>Rotated table header</h1>
+         <div class='main'>
+            <div id='rotatedHeader'>
+               <table>
+                  <thead>
+                     <tr>
+                        <th></th>
+                        <th class='rotate'>
+                           <div><span>Column Header 1</span></div>
+                        </th>
+                        <th class='rotate'>
+                           <div><span>Column Header 2</span></div>
+                        </th>
+                        <th class='rotate'>
+                           <div><span>Column Header 3</span></div>
+                        </th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <th class='row-header'>Row header 1</th>
+                        <td><input type='checkbox'></td>
+                        <td><input type='checkbox'></td>
+                        <td><input type='checkbox'></td>
+                     </tr>
+                     <tr>
+                        <th class='row-header'>Row header 1</th>
+                        <td><input type='checkbox'></td>
+                        <td><input type='checkbox'></td>
+                        <td><input type='checkbox'></td>
+                     </tr>
+                     <tr>
+                        <th class='row-header'>Row header 1</th>
+                        <td><input type='checkbox'></td>
+                        <td><input type='checkbox'></td>
+                        <td><input type='checkbox'></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+
+            <div id='rotatedHeader2'>
+               <table>
+                  <thead>
+                     <tr>
+                        <th></th>
+                        <th>Column Header 1</th>
+                        <th>Column Header 2</th>
+                        <th>Column Header 3</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <th>Row header 1</th>
+                        <td><input type='checkbox'></td>
+                        <td><input type='checkbox'></td>
+                        <td><input type='checkbox'></td>
+                     </tr>
+                     <tr>
+                        <th>Row header 1</th>
+                        <td><input type='checkbox'></td>
+                        <td><input type='checkbox'></td>
+                        <td><input type='checkbox'></td>
+                     </tr>
+                     <tr>
+                        <th>Row header 1</th>
+                        <td><input type='checkbox'></td>
+                        <td><input type='checkbox'></td>
+                        <td><input type='checkbox'></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
          </div>
       </div>
 
@@ -411,6 +528,11 @@
                   that shows the rendering of the style, and how to use it.
 
                <li>Which <a href='http://thenewcode.com/775/Which-CSS-Measurements-To-Use-When'>measurements</a> to use, when</li>
+            </ol>
+
+            <h2>Themes</h2>
+            <ol>
+               <li><a href='http://purecss.io'>PureCSS</a></li>
             </ol>
          </div>
       </div>
@@ -588,6 +710,42 @@
                  }
                }
             </pre>
+         </div>
+      </div>
+
+      <!-- background clip -->
+
+      <div class='demo'>
+         <h1>Background clip
+             <a href='https://css-tricks.com/the-backgound-clip-property-and-use-cases/'>&raquo;</a>
+         </h1>
+         <div id='backgroundclip' class='main'>
+            <h2>Background-clip property</h2>
+            <div class='backgroundclip'>
+                <div>border-box</div>
+                <div>padding-box</div>
+                <div>content-box</div>
+            </div>
+
+            <h2>Soft plastic control<h2>
+            <div class='plasticcontrol'>
+                <button></button>
+            </div>
+
+            <h2>Matte control<h2>
+            <div class='mattecontrol'>
+                <button></button>
+            </div>
+
+            <h2>3D control<h2>
+            <div class='control3d'>
+                <button></button>
+            </div>
+
+            <h2>Metallic<h2>
+            <div class='metallic'>
+                <button></button>
+            </div>
          </div>
       </div>
 
@@ -972,6 +1130,28 @@
          <script>linemenu()</script>
       </div>
 
+      <!-- Zoom background -->
+
+      <div class='demo'>
+         <h1>Zoom Background
+            <a class='more' href='https://css-tricks.com/zooming-background-images/'>&raquo;</a>
+         </h1>
+         <div id='zoombackground' class='main'>
+            <div class='wrapper'>
+               <div class='parent' onclick=''>
+                  <div class='child bg-one'>
+                     <a href='#'>New York</a>
+                  </div>
+               </div>
+               <div class='parent' onclick=''>
+                  <div class='child bg-two'>
+                     <a href='#'>Alps</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
       <!-- Iconify content -->
 
       <div class='demo'>
@@ -981,6 +1161,22 @@
          <div id='iconifyContent' class='main'>
             <iframe style='width:100%; height: 800px' src='http://codepen.io/lonekorean/full/doXjJG/'></iframe>
          </div>
+      </div>
+
+      <!-- UI details -->
+      <div class='demo'>
+         <h1>UI details
+            <a href='https://codepen.io/tyrellrummage/pen/ZJPXgy'>&raquo;</a>
+         </h1>
+         <div id='uiDetails' class='main'>
+            <iframe style='width:100%; height: 800px' src='https://codepen.io/tyrellrummage/pen/ZJPXgy'></iframe>
+         </div>
+      </div>
+
+      <div class='demo'>
+         <h1>Particles
+            <a href='https://codepen.io/PavelDoGreat/pen/zdWzEL'>&raquo;</a>
+         </h1>
       </div>
    </body>
 </html>

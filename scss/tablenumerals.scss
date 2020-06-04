@@ -1,0 +1,57 @@
+#tablenumerals {
+
+   table {
+      border-collapse: collapse;
+      font-family: "minion pro", "myriad pro", "tahoma",
+   }
+
+   td, th {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+      line-height: 1;
+      text-align: left;
+      font-size: 24px;
+   }
+
+   /* Right-align numeric values */
+   tr > th + th,
+   tr > th + th + th,
+   tr > th + td + td,
+   tr > th + td {
+      text-align: right;
+      text-align: "." right;  /* Does not work in every browser */
+   }
+
+   td.proportional-lining {
+      font-variant-numeric: lining-nums proportional-nums;
+   }
+   td.proportional-old {
+      font-variant-numeric: oldstyle-nums proportional-nums;
+      font-feature-settings: onum;  /* older browsers */
+   }
+   td.tabular-lining {
+      font-variant-numeric: lining-nums tabular-nums;
+   }
+   td.tabular-old {
+      font-variant-numeric: oldstyle-nums tabular-nums;
+      font-feature-settings: onum;  /* older browsers */
+   }
+   td.fixed {
+      font-family: 'courier';
+   }
+   td.fixed-old {
+      font-family: 'courier';
+      font-variant-numeric: oldstyle-nums;
+   }
+   td.ordinal  {
+      font-variant-numeric: ordinal;
+   }
+   td.fraction-diagonal {
+      font-variant-numeric: diagonal-fractions;
+      font-feature-settings: frac;  /* older browsers */
+   }
+   td.fraction-stacked {
+      font-variant-numeric: stacked-fractions;
+      font-feature-settings: afrc;  /* older browsers */
+   }
+
+}
