@@ -13,154 +13,54 @@
 
       <!-- for checkboxes demo -->
       <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+      <!--  When in an iframe, open the link in the parent -->
+      <base target="_parent">
    </head>
    <body>
-      <!--  SEE ALSO -->
-      <a href="https://css-tricks.com/drag-and-drop-file-uploading/">drag-and-drop file uploading</a>
-      <a href="http://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/">Customizing file input</a>
-
       <!-- meta: see https://css-tricks.com/probably-use-initial-scale1/ -->
+
+      <h1>External links</h1>
+
+      <div class='demo'>
+         <h1><a href="https://css-tricks.com/drag-and-drop-file-uploading/">drag-and-drop file uploading</a></h1>
+      </div>
+
+      <div class='demo'>
+         <h1><a href="http://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/">Customizing file input</a></h1>
+      </div>
+
+      <!-- Regression testing -->
+
+      <div class='demo'>
+         <h1><a href='https://css-tricks.com/automating-css-regression-testing/'>Automatic testing</a></h1>
+      </div>
 
       <h1>Images</h1>
 
-      <!-- Knockout text -->
       <div class='demo'>
-         <h1>Knockout Text
-            <a class='more' href='https://css-tricks.com/how-to-do-knockout-text/'>&raquo;</a>
-         </h1>
-         <div id='knockout' class='main'>
-            <p class="gradient">The Title</p>
-            <p class="gradient2">The Alps</p>
-            <p class="gradient3">Webkit</p>
-            <p>'Webkit' does not need repeating the text in the CSS</p>
-         </div>
+         <h1><a href='knockout.html'>Knockout Text</a></h1>
+      </div>
+      <div class='demo'>
+         <h1><a href='blurry_bg.html'>Text on blurry background</a></h1>
+      </div>
+      <div class='demo'>
+         <h1><a href='blurry_bg2.html'>Blurry background (2)</a></h1>
+      </div>
+      <div class='demo'>
+         <h1><a href='neumorphism.html'>Neumorphism</a></h1>
+      </div>
+      <div class='demo'>
+         <h1><a href='csspatterns.html'>CSS Patterns</a></h1>
+      </div>
+      <div class='demo'>
+         <h1><a href='blendmodes.html'>Blend modes</a></h1>
       </div>
 
-      <!-- Blur -->
-      <div class='demo'>
-         <h1>Text on blurry background
-            <a class='more' href='https://css-tricks.com/frosting-glass-css-filters/'>&raquo;</a>
-         </h1>
-         <div id='blurLabel' class='main'>
-            <div>
-               <article class='glass down'>
-                  <h1>Alps</h1>
-                  <p>Some additional contents</p>
-                  <p>Which could</p>
-                  <p>be quite long</p>
-                  <p>be quite long</p>
-                  <p>be quite long</p>
-                  <p>be quite long</p>
-                  <p>be quite long</p>
-               </article>
-            </div>
-            <svg xmlns="http://www.w3.org/2000/svg"  version="1.1" style='display:none'>
-               <defs>
-                  <filter id="blurLabel-blur">
-                     <feGaussianBlur stdDeviation="5"/>
-                  </filter>
-               </defs>
-            </svg>
-         </div>
-      </div>
-
-      <!-- CSS patterns -->
-      <div class='demo'>
-         <h1>CSS Patterns
-            <a class='more' href='http://lea.verou.me/css3patterns/'>&raquo;</a>
-         </h1>
-         <div id='cssPatterns' class='main'>
-            <div class='japanese'></div>
-            <div class='rainbow'></div>
-            <div class='blueprint'></div>
-            <div class='lined'></div>
-         </div>
-      </div>
-
-      <!-- Blend modes -->
-      <div class='demo'>
-         <h1>Blend modes
-            <a class='more' href='https://css-tricks.com/chaining-multiple-blend-modes/'>&raquo;</a>
-         </h1>
-         <div id='blendmodes' class='main'>
-            <div class="container" id="c-red" style="background-blend-mode: normal">
-               <div class="menu">
-                  <span>Blend mode</span>
-                  <div class="menu__item">
-                     <ul id="blendmodesblend">
-                        <li class="is--active">normal</li>
-                        <li>multiply</li>
-                        <li>overlay</li>
-                        <li>screen</li>
-                        <li>darken</li>
-                        <li>lighten</li>
-                        <li>color-dodge</li>
-                        <li>color-burn</li>
-                        <li>hard-light</li>
-                        <li>soft-light</li>
-                        <li>difference</li>
-                        <li>exclusion</li>
-                        <li>hue</li>
-                        <li>saturation</li>
-                        <li>color</li>
-                        <li>luminosity</li>
-                     </ul>
-                  </div>
-               </div>
-               <ul id="blendmodescolor">
-                  <li class='is--active'>red</li>
-                  <li>yellow</li>
-                  <li>green</li>
-               </ul>
-            </div>
-            <script>blendmodes()</script>
-         </div>
-      </div>
       <h1>Animation</h1>
 
-      <!-- Context shifting -->
       <div class='demo'>
-         <h1>Context shifting
-            <a class='more' href='https://css-tricks.com/the-importance-of-context-shifting-in-ux-patterns/'>&raquo;</a>
-         </h1>
-         <div id='contextShifting' class='main'>
-            <div class="container">
-               <div class="day day1">
-                  <svg class="lines" xmlns="http://www.w3.org/2000/svg" width="300" height="115" viewBox="0 0 300 115">
-                     <path d="M0 66.6s69.5 29 92-3 53.1-49.3 75.1-24.1 54.2 36.9 76.4 21.4 30.1-26.3 56.5-20.1" />
-                  </svg>
-                  <div class="text">
-                     <span class="header tI">Today</span>
-                     <span class="temp tI">24&#176;F High</span>
-                     <p class="reg-text tI">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quam leo, fringilla sit amet diam ac, condimentum tristique nisi. Duis eleifend odio dui, et fermentum augue bibendum nec. Cras id sem at dolor tempor euismod.</p>
-                     <p class="snow tI">85% Chance of Snow</p>
-                  </div>
-               </div>
-               <div class="day day2">
-                  <svg class="lines" xmlns="http://www.w3.org/2000/svg" width="300" height="115" viewBox="0 0 300 115">
-                     <path d="M0 30s79.3 68.6 112.3 51.5S163.8 9.1 195 32.4s77 33.3 105 18.7" />
-                  </svg>
-                  <div class="text">
-                     <span class="header tI">Tomorrow</span>
-                     <span class="temp tI">38&#176;F High</span>
-                     <p class="reg-text tI">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quam leo, fringilla sit amet diam ac, condimentum tristique nisi. Duis eleifend odio dui, et fermentum augue bibendum nec. Cras id sem at dolor tempor euismod.</p>
-                     <p class="snow tI">53% Chance of Snow</p>
-                  </div>
-               </div>
-               <div class="day day3">
-                  <svg class="lines" xmlns="http://www.w3.org/2000/svg" width="300" height="115" viewBox="0 0 300 115">
-                     <path d="M0 56.3s49.5-38.2 68.7-11.9 65.9 43.6 90.8 19.8 42.6-12.7 48.2-10.7c9.2 3.3 52.2 33.7 72.1-5.1 9.8-19 20.2-5.4 20.2-5.4" />
-                  </svg>
-                  <div class="text">
-                     <span class="header tI">Day After</span>
-                     <span class="temp tI">34&#176;F High</span>
-                     <p class="reg-text tI">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi quam leo, fringilla sit amet diam ac, condimentum tristique nisi. Duis eleifend odio dui, et fermentum augue bibendum nec. Cras id sem at dolor tempor euismod.</p>
-                     <p class="snow tI">74% Chance of Snow</p>
-                  </div>
-               </div>
-            </div>
-            <script>contextShifting()</script>
-         </div>
+         <h1><a href="context_shift.html">Context shifting</a></h1>
       </div>
 
       <h1>SVG</h1>
@@ -618,69 +518,8 @@
          </div>
       </div>
 
-      <!-- Flexbox -->
       <div class='demo'>
-         <h1>Flexbox Grids
-            <a class='more' href='http://philipwalton.github.io/solved-by-flexbox/'>&raquo;</a>
-         </h1>
-         <div id='flexbox' class='main'>
-            <div class='page'>
-               <header>
-                  <h1 class='title'>Solved <i>by</i> Flexbox</h1>
-               </header>
-               <main class='content'>
-                  <div class='Grid Grid-gutter Grid--full large-Grid--fit'>
-                     <div class='Grid-cell'>
-                         A responsive grid.<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis velit non gravida venenatis. Praesent consequat lectus purus, ut scelerisque velit condimentum eu.
-                     </div>
-                     <div class='Grid-cell'>
-                         Try resizing the window
-                     </div>
-                     <div class='Grid-cell'>
-                         See also <a href='https://github.com/JohnAlbin/zen-grids'>Zen Grids</a> for a pre-made SASS framework
-                     </div>
-                  </div>
-
-                  <!-- using different alignments -->
-                  <div class='Grid Grid--top Grid-gutter'>
-                     <div class='Grid-cell'>
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis velit non gravida venenatis. Praesent consequat lectus purus, ut scelerisque velit condimentum eu.
-                     </div>
-                     <div class='Grid-cell'>
-                         All cells are top aligned
-                     </div>
-                     <div class='Grid-cell'>
-                         Another cell
-                     </div>
-                  </div>
-
-                  <div class='Grid Grid--center Grid-gutter'>
-                     <div class='Grid-cell'>
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis velit non gravida venenatis. Praesent consequat lectus purus, ut scelerisque velit condimentum eu.
-                     </div>
-                     <div class='Grid-cell'>
-                         All cells are centered aligned
-                     </div>
-                     <div class='Grid-cell'>
-                         Another cell
-                     </div>
-                  </div>
-
-                  <div class='Grid Grid--bottom Grid-gutter'>
-                     <div class='Grid-cell'>
-                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis velit non gravida venenatis. Praesent consequat lectus purus, ut scelerisque velit condimentum eu.
-                     </div>
-                     <div class='Grid-cell'>
-                         All cells are bottom aligned
-                     </div>
-                     <div class='Grid-cell'>
-                         Another cell
-                     </div>
-                  </div>
-               </main>
-               <footer>Sticky footer, always at bottom even if content is empty</footer>
-            </div>
-         </div>
+         <h1><a href='grid.html'>Flexbox Grids</a></h1>
       </div>
 
       <!--
@@ -747,48 +586,7 @@
       <!-- background clip -->
 
       <div class='demo'>
-         <h1>Background clip
-             <a href='https://css-tricks.com/the-backgound-clip-property-and-use-cases/'>&raquo;</a>
-         </h1>
-         <div id='backgroundclip' class='main'>
-            <h2>Background-clip property</h2>
-            <div class='backgroundclip'>
-                <div>border-box</div>
-                <div>padding-box</div>
-                <div>content-box</div>
-            </div>
-
-            <h2>Soft plastic control<h2>
-            <div class='plasticcontrol'>
-                <button></button>
-            </div>
-
-            <h2>Matte control<h2>
-            <div class='mattecontrol'>
-                <button></button>
-            </div>
-
-            <h2>3D control<h2>
-            <div class='control3d'>
-                <button></button>
-            </div>
-
-            <h2>Metallic<h2>
-            <div class='metallic'>
-                <button></button>
-            </div>
-         </div>
-      </div>
-
-      <!-- Regression testing -->
-
-      <div class='demo'>
-         <h1>Automatic regression testing</h1>
-         <div id='testing' class='main'>
-            <ol>
-               <li><a href='https://css-tricks.com/automating-css-regression-testing/'>Automatic testing</a></li>
-            </ol>
-         </div>
+         <h1><a href='background_clip.html'>Background clip</a></h1>
       </div>
 
       <h1>Typography</h1>
@@ -807,24 +605,8 @@
          </div>
       </div>
 
-      <!--
-         First example: http://blog.echoenduring.com/2010/05/13/create-beautiful-css3-typography/
-         -->
-
       <div class='demo'>
-         <h1>Web Typography</h1>
-         <div id='beautifulCSS3' class='main'>
-            <h1>
-               Web Typography
-               <span>A Demo For Beautiful Typography on the Web</span>
-            </h1>
-            <div class="meta">An <span>Article</span> by <span>Matt Ward</span></div>
-            <div class="body">
-               <p>It has been suggested that beautiful and usable websites are created on a foundation of beautiful and usable typography. That makes it a pretty important element that you will want to look at very carefully.</p>
-               <p>Fortunately, CSS offers a variety of styling options that allow you a great deal of control over how your present your content to your viewers and users. This demo - which is entirely driven by CSS - is built to demonstrate the step by step development of attractive typography, moving from basic HTML to fully styled content. You can use the buttons at the top of the page to view the content in various stages of styling, from completely unstyled to the completed design. Please feel free to have a bit of fun by working through the various stages.</p>
-               <span class='date'>Created: May 13, 2010</span>
-            </div>
-         </div>
+         <h1><a href='typography.html'>Typography</a></h1>
       </div>
 
       <!-- Text effects -->
@@ -1021,98 +803,8 @@
 
       <h1>Design</h1>
 
-      <!-- Roadmaps -->
-
       <div class='demo'>
-         <h1>Roadmap</h1>
-         <div id='roadmap' class='main'>
-            <h1>Roadmap (source: Intercom on Product Management by Des Traynor)</h1>
-            <div class='line'>
-               <span class='name'></span>
-               <span class='duration--1week'></span>  <!-- starting mid-june -->
-               <span class='month duration--4weeks'>Jun</span>
-               <span class='month duration--4weeks'>Jul</span>
-               <span class='now'></span>
-               <span class='month duration--4weeks'>Aug</span>
-               <span class='month duration--4weeks'>Sep</span>
-               <span class='month duration--4weeks'>Oct</span>
-            </div>
-            <div class='group group--blue'>
-               <h1><span>Design</span></h1>
-               <div class='line'>
-                  <span class='name'>
-                  <img src='http://www.adacore.com/stavatar/30/ayre.jpg?s=30&d=mm'>
-                  Joe
-                  </span>
-                  <span class='busy duration--5weeks'>IOS App</span>
-                  <span class='busy duration--6weeks'>Android App</span>
-               </div>
-               <div class='line'>
-                  <span class='name'>
-                  <img src='http://www.adacore.com/stavatar/30/mason.jpg?s=30&d=mm'>
-                  Sarah
-                  </span>
-                  <span class='busy duration--3weeks'>Blog</span>
-                  <span class='busy duration--5weeks'>Marketing Site</span>
-                  <span class='busy duration--6weeks'>Docs Redesign</span>
-               </div>
-               <div class='line'>
-                  <span class='name'>
-                  <img src='http://www.adacore.com/stavatar/30/dross.jpg?s=30&d=mm'>
-                  Mary
-                  </span>
-                  <span class='busy duration--7weeks'>Emails</span>
-                  <span class='busy duration--5weeks'>Advertisement</span>
-               </div>
-               <div class='line'>
-                  <span class='name'>
-                  <img src='http://www.adacore.com/stavatar/30/mellor.jpg?s=30&d=mm'>
-                  Russ
-                  </span>
-                  <span class='busy duration--7weeks'>UI Refresh</span>
-                  <span class='busy duration--3weeks'>Holidays</span>
-               </div>
-            </div>
-            <div class='group group--green'>
-               <h1><span>Development</h1>
-               <div class='line'>
-                  <span class='name'>
-                  <img src='http://www.adacore.com/stavatar/30/briot.jpg?s=30&d=mm'>
-                  Rob
-                  </span>
-                  <span class='busy duration--6weeks'>API Redesign</span>
-                  <span class='busy duration--5weeks'>IOS App</span>
-               </div>
-               <div class='line'>
-                  <span class='name'>
-                  <img src='http://www.adacore.com/stavatar/30/setton.jpg?s=30&d=mm'>
-                  Justin
-                  </span>
-                  <span class='free duration--2weeks'></span>
-                  <span class='busy duration--5weeks'>Reporting Feature</span>
-                  <span class='busy duration--4weeks'>Marketing Site</span>
-               </div>
-               <div class='line'>
-                  <span class='name'>
-                  <img src='http://www.adacore.com/stavatar/30/reboul.jpg?s=30&d=mm'>
-                  Lisa
-                  </span>
-                  <span class='busy duration--5weeks'>OS X Client</span>
-                  <span class='free duration--1week'></span>
-                  <span class='busy duration--4weeks'>Internal</span>
-                  <span class='busy duration--4weeks'>Performance</span>
-               </div>
-               <div class='line'>
-                  <span class='name'>
-                  <img src='http://www.adacore.com/stavatar/30/fofanov.jpg?s=30&d=mm'>
-                  Carl
-                  </span>
-                  <span class='busy duration--3weeks'>JS</span>
-                  <span class='busy duration--7weeks'>Blog</span>
-                  <span class='busy duration--3weeks'>Emails</span>
-               </div>
-            </div>
-         </div>
+         <h1><a href='roadmap.html'>Roadmap</a></h1>
       </div>
 
       <!-- Transform tabs -->

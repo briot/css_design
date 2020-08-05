@@ -42,3 +42,35 @@
        transform: translateY(0) translateZ(0);
     }
 }
+
+
+// Simpler approach with backdrop-filter property.
+// Not supported in Firefox
+
+#blurLabel2 {
+   background-image: url('alps.png');
+   background-size: cover;
+   width: 500px;
+   height: 400px;
+
+   // Center the form
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   form {
+      width: 150px;
+      padding: 20px;
+      border-radius: 10px;
+
+      background: rgba(255,255,255,0.5);  // fallback
+//      backdrop-filter: saturate(180%) blur(10px);
+      backdrop-filter: blur(10px);
+   }
+
+   input {
+      margin: 10px 0;
+   }
+
+
+}

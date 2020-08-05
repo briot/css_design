@@ -1,0 +1,47 @@
+<html>
+<head>
+   <link rel="stylesheet" type="text/css" href="styles.css" />
+   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+   <script src='scripts.js'></script>
+</head>
+<body class="toc">
+   <iframe src="index.html" title="table of contents" ></iframe>
+   <div class="descr">
+      <a href='https://css-tricks.com/chaining-multiple-blend-modes/'>See link</a>
+   </div>
+   <div class="blackdemo" id="blendmodes">
+      <div class="container" id="c-red" style="background-blend-mode: normal">
+         <div class="menu">
+            <span>Blend mode</span>
+            <div class="menu__item">
+               <ul id="blendmodesblend">
+                  <li class="is--active">normal</li>
+                  <li>multiply</li>
+                  <li>overlay</li>
+                  <li>screen</li>
+                  <li>darken</li>
+                  <li>lighten</li>
+                  <li>color-dodge</li>
+                  <li>color-burn</li>
+                  <li>hard-light</li>
+                  <li>soft-light</li>
+                  <li>difference</li>
+                  <li>exclusion</li>
+                  <li>hue</li>
+                  <li>saturation</li>
+                  <li>color</li>
+                  <li>luminosity</li>
+               </ul>
+            </div>
+         </div>
+         <ul id="blendmodescolor">
+            <li class='is--active'>red</li>
+            <li>yellow</li>
+            <li>green</li>
+         </ul>
+      </div>
+      <script>blendmodes()</script>
+   </div>
+</body>
+</html>
+
